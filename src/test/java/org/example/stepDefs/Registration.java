@@ -1065,7 +1065,8 @@ public class Registration {
     }
 
     @And("STEP[J] Mark On subscribe to the Newsletter checkbox")
-    public void step32() throws InterruptedException {
+    public void step32() throws InterruptedException
+    {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         wait.withTimeout(Duration.ofSeconds(5));
         wait.pollingEvery(Duration.ofMillis(500));
@@ -1079,7 +1080,8 @@ public class Registration {
     }
 
     @Then("STEP[K] New Account Is created successfully")
-    public void step33() throws InterruptedException {
+    public void step33() throws InterruptedException
+    {
         Thread.sleep(Duration.ofSeconds(3));
         WebElement submit = driver.findElement(By.cssSelector("div>button[type=\"submit\"]"));
         js.executeScript("arguments[0].click();", submit);
