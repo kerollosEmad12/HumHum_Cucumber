@@ -1065,8 +1065,7 @@ public class Registration {
     }
 
     @And("STEP[J] Mark On subscribe to the Newsletter checkbox")
-    public void step32() throws InterruptedException
-    {
+    public void step32() throws InterruptedException {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         wait.withTimeout(Duration.ofSeconds(5));
         wait.pollingEvery(Duration.ofMillis(500));
@@ -1080,8 +1079,7 @@ public class Registration {
     }
 
     @Then("STEP[K] New Account Is created successfully")
-    public void step33() throws InterruptedException
-    {
+    public void step33() throws InterruptedException {
         Thread.sleep(Duration.ofSeconds(3));
         WebElement submit = driver.findElement(By.cssSelector("div>button[type=\"submit\"]"));
         js.executeScript("arguments[0].click();", submit);
@@ -1191,6 +1189,115 @@ public class Registration {
 
     @Then("STEP[K] New Account Is Created successfully")
     public void step44() throws InterruptedException {
+        Thread.sleep(Duration.ofSeconds(3));
+        WebElement submit = driver.findElement(By.cssSelector("div>button[type=\"submit\"]"));
+        js.executeScript("arguments[0].click();", submit);
+    }
+
+    @Given("STEP[A] User Navigate To Home page")
+    public void step45()
+    {
+        driver.navigate().to("https://staging2.fabrica-dev.com/humhum-user/");
+    }
+
+    @And("STEP[B] User Click On Login Button")
+    public void step46() throws InterruptedException {
+        Thread.sleep(Duration.ofSeconds(10));
+        WebElement popup1 = driver.findElement(By.className("mfp-close"));
+        if (popup1.isDisplayed())
+        {
+            popup1.click();
+        }
+        Thread.sleep(Duration.ofSeconds(10));
+
+        //Open login icon
+        driver.findElement(By.cssSelector("div[role=\"button\"]>svg")).click();
+        Thread.sleep(Duration.ofSeconds(3));
+    }
+
+    @And("STEP[C] User Click On Create account Btn")
+    public void step47() throws InterruptedException {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        wait.withTimeout(Duration.ofSeconds(5));
+        wait.pollingEvery(Duration.ofMillis(500));
+        wait.ignoring(NoSuchElementException.class);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("a[href=\"/humhum-user/user-register\"]")));
+        //Click on account button
+        WebElement create = driver.findElement(By.cssSelector("a[href=\"/humhum-user/user-register\"]"));
+        synchronized (driver){
+            driver.wait(10000);
+        }
+        create.click();
+    }
+
+    @When("STEP[d] USER Select Title")
+    public void step48()
+    {
+        WebElement title = driver.findElement(By.cssSelector("select>option[value=\"Mr\"]"));
+        title.click();
+    }
+
+    @And("STEP[E] User Write Valid first name and valid last name")
+    public void step49()
+    {
+        //Input the first name
+        WebElement first_name = driver.findElement(By.cssSelector("input[type=\"text\"]"));
+        first_name.sendKeys("Fabrica");
+        //Input the last_name
+        WebElement last_name = driver.findElement(By.cssSelector("input[id=\"l-name\"]"));
+        last_name.sendKeys("Dev");
+    }
+
+    @And("STEp[F] User Enter Valid email")
+    public void step50()
+    {
+        Faker faker = new Faker();
+        globalEmail = faker.internet().emailAddress();
+        WebElement email = driver.findElement(By.cssSelector("input[id=\"email\"]"));
+        email.sendKeys(globalEmail);
+    }
+
+    @And("STep[G] User Enter valid password and valid confirm password")
+    public void step51()
+    {
+        //Input the password
+        WebElement pass = driver.findElement(By.cssSelector("input[id=\"NewPassword\"]"));
+        pass.sendKeys("Fabrica123!");
+        //Input the Con password
+        WebElement Confirm = driver.findElement(By.cssSelector("input[id=\"confirmPassword\"]"));
+        Confirm.sendKeys("Fabrica123!");
+    }
+
+    @When("STEP[H] User select invalid county code")
+    public void step52()
+    {
+        WebElement country = driver.findElement(By.cssSelector("select>option[value=\"DK\"]"));
+        country.click();
+    }
+
+    @And("STEP[I] User Enter Valid Phone Number")
+    public void step53()
+    {
+        WebElement phone = driver.findElement(By.cssSelector("input[id=\"phone\"]"));
+        phone.sendKeys("01274068946");
+    }
+
+    @And("STEP[J] Mark On Subscribe to the Newsletter Checkbox")
+    public void step54() throws InterruptedException {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        wait.withTimeout(Duration.ofSeconds(5));
+        wait.pollingEvery(Duration.ofMillis(500));
+        wait.ignoring(NoSuchElementException.class);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div>input[type=\"checkbox\"]+label")));
+        WebElement box = driver.findElement(By.cssSelector("div>input[type=\"checkbox\"]+label"));
+        js.executeScript("arguments[0].click();", box);
+        synchronized (driver){
+            driver.wait(10000);
+        }
+    }
+
+    @Then("STEP[K] New Account Is Created Successfully")
+    public void step55() throws InterruptedException {
         Thread.sleep(Duration.ofSeconds(3));
         WebElement submit = driver.findElement(By.cssSelector("div>button[type=\"submit\"]"));
         js.executeScript("arguments[0].click();", submit);

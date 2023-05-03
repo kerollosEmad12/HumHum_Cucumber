@@ -143,3 +143,16 @@ Feature: Test automation functionality
         And STEP[I] User Enter Valid Phone number
         And STEP[J] Mark On Subscribe to the Newsletter checkbox
         Then STEP[K] New Account Is Created successfully
+
+      Scenario:  user could Create new account with invalid data (invalid county code) for B2C Register (Negative scenario)
+        Given STEP[A] User Navigate To Home page
+        And STEP[B] User Click On Login Button
+        And STEP[C] User Click On Create account Btn
+        When STEP[d] USER Select Title
+        And STEP[E] User Write Valid first name and valid last name
+        And STEp[F] User Enter Valid email
+        And STep[G] User Enter valid password and valid confirm password
+        When STEP[H] User select invalid county code
+        And STEP[I] User Enter Valid Phone Number
+        And STEP[J] Mark On Subscribe to the Newsletter Checkbox
+        Then STEP[K] New Account Is Created Successfully
