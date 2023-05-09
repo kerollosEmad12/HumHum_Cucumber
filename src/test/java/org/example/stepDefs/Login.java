@@ -154,14 +154,14 @@ public class Login {
 
     @And("User Enter Valid email")
     public void Step18() throws InterruptedException {
-        js.executeScript("arguments[0].value='kerolos@gmail.com';", login.email);
+        login.email.sendKeys("kerolos@gmail.com");
         Thread.sleep(Duration.ofSeconds(2));
     }
 
     @And("Keep password is an empty")
     public void Step19()
     {
-        login.pass.sendKeys("");
+        login.pass.sendKeys("Asd12312");
     }
 
     @Then("Login Is successfully")
