@@ -53,7 +53,7 @@ public class Order {
     }
 
     @And("user choose product promotion")
-    public void step5() throws InterruptedException {
+    public void step6() throws InterruptedException {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         wait.withTimeout(Duration.ofSeconds(5));
         wait.pollingEvery(Duration.ofMillis(500));
@@ -62,56 +62,47 @@ public class Order {
             driver.wait(10000);
         }
         WebElement popup1 = driver.findElement(By.cssSelector("button[class=\"mfp-close\"]"));
-        if (popup1.isDisplayed()) {
-            popup1.click();
-        }
+        popup1.click();
 
         Thread.sleep(Duration.ofSeconds(3));
-        js.executeScript("arguments[0].scrollIntoView();", order.product);
-        WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(30));
-        wait1.withTimeout(Duration.ofSeconds(5));
-        wait1.pollingEvery(Duration.ofMillis(500));
-        wait1.ignoring(NoSuchElementException.class);
-        wait1.until(ExpectedConditions.visibilityOfElementLocated(By.className("product-cart")));
-        synchronized (driver){
-            driver.wait(10000);
-        }
-        order.product.click();
-    }
-
-    @And("user click on button cart without assigning a cart allotted to it")
-    public void step6() throws InterruptedException {
-        action.moveToElement(order.cart).perform();
-        action.click(order.cart).perform();
+        js.executeScript("arguments[0].scrollIntoView();", order.cart);
+        js.executeScript("arguments[0].click();", order.cart);
         Thread.sleep(Duration.ofSeconds(1));
-
-        Thread.sleep(Duration.ofSeconds(2));
-        js.executeScript("arguments[0].click();", order.cart2);
     }
 
     @And("user click on view cart button")
     public void step7() throws InterruptedException {
-        js.executeScript("arguments[0].scrollIntoView();", order.view);
-        action.moveToElement(order.view).perform();
-        action.click(order.view).perform();
+        order.view.click();
         Thread.sleep(Duration.ofSeconds(2));
     }
 
+    @And("user enter coupon")
+    public void step8()
+    {
+        order.coupon.sendKeys("6666666");
+        order.apply.click();
+    }
+
     @And("mark on payment checkbox")
-    public void step8() throws InterruptedException {
+    public void step9() throws InterruptedException {
         js.executeScript("arguments[0].click();", order.cash);
         Thread.sleep(Duration.ofSeconds(2));
     }
 
     @And("mark on I accept checkbox")
-    public void step9() throws InterruptedException {
+    public void step10() throws InterruptedException {
         js.executeScript("arguments[0].click();", order.checkbox);
         Thread.sleep(Duration.ofSeconds(2));
     }
 
-    @Then("user click on checkout button")
-    public void step10() throws InterruptedException {
+    @And("user click on checkout button")
+    public void step11() throws InterruptedException {
         js.executeScript("arguments[0].click();", order.checkout);
         Thread.sleep(Duration.ofSeconds(2));
+    }
+
+    @Then("user click on track your order")
+    public void step12() {
+        js.executeScript("arguments[0].click();", order.orderList);
     }
 }

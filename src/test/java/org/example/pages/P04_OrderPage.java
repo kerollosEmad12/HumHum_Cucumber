@@ -20,20 +20,17 @@ public class P04_OrderPage {
     @FindBy (css = "button[type=\"submit\"]")
     public WebElement Btn;
 
-    @FindBy (css = "button[class=\"mfp-close\"] svg")
-    public WebElement popup1;
-
-    @FindBy (className = "product-cart")
-    public WebElement product;
-
-    @FindBy (css = "div h4 a[href=\"/humhum-user/details?id=574&type=Buy%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%202%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20Get%201\"]")
+    @FindBy (xpath = "(//*[@class=\"tab-pane active\"]//a//button)[2]")
     public WebElement cart;
 
-    @FindBy (css = "button[class=\"btn br-5 btn btn-loght border-0 outline-none shadow-none d-block add-cart cart-btn btn-secondary\"]")
-    public WebElement cart2;
-
-    @FindBy (css = "button[class=\"btn dark event-btn view-cart\"]")
+    @FindBy (css = "button a[href=\"/humhum-user/cart\"]")
     public WebElement view;
+
+    @FindBy (css = "input[class=\"my-2 h-100 p-3 w-100 itemInput\"]")
+    public WebElement coupon;
+
+    @FindBy (css = "button[class=\"btn login-button my-2 py-3 px-4 w-auto btn-secondary\"]")
+    public WebElement apply;
 
     @FindBy (css = "div[class=\"method cach\"] input[class=\"custom-control-input\"]+label")
     public WebElement cash;
@@ -43,4 +40,7 @@ public class P04_OrderPage {
 
     @FindBy (css = "div[class=\"checkout\"] button[type=\"submit\"]")
     public WebElement checkout;
+
+    @FindBy (css = "button[class=\"btn btn-outline-success mt-4\"]")
+    public WebElement orderList;
 }

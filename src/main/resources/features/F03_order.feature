@@ -7,8 +7,9 @@ Feature: Test order functionality
     And user enter email
     And user enter password
     And user choose product promotion
-    And user click on button cart without assigning a cart allotted to it
     And user click on view cart button
+    And user enter coupon
     And mark on payment checkbox
     And mark on I accept checkbox
-    Then user click on checkout button
+    And user click on checkout button
+    Then user click on track your order
