@@ -65,8 +65,8 @@ public class Order {
         popup1.click();
 
         Thread.sleep(Duration.ofSeconds(3));
-        js.executeScript("arguments[0].scrollIntoView();", order.cart);
-        js.executeScript("arguments[0].click();", order.cart);
+        js.executeScript("arguments[0].scrollIntoView();", order.getY);
+        js.executeScript("arguments[0].click();", order.getY);
         Thread.sleep(Duration.ofSeconds(1));
     }
 

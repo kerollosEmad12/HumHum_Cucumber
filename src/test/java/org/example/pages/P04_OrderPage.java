@@ -21,7 +21,7 @@ public class P04_OrderPage {
     public WebElement Btn;
 
     @FindBy (xpath = "(//*[@class=\"tab-pane active\"]//a//button)[2]")
-    public WebElement cart;
+    public WebElement getY;
 
     @FindBy (css = "button a[href=\"/humhum-user/cart\"]")
     public WebElement view;
