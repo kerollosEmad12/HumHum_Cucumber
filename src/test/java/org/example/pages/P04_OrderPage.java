@@ -1,6 +1,5 @@
 package org.example.pages;
 
-import org.checkerframework.checker.units.qual.C;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -22,6 +21,21 @@ public class P04_OrderPage {
 
     @FindBy (xpath = "(//*[@class=\"tab-pane active\"]//a//button)[2]")
     public WebElement getY;
+
+    @FindBy (css = "button[class=\"btn dark event-btn continue-shopping\"]")
+    public WebElement shop;
+
+    @FindBy (css = "div>ul[id=\"__BVID__65__BV_tab_controls_\"]>li>a[id=\"__BVID__68___BV_tab_button__\"]")
+    public WebElement Gift;
+
+    @FindBy (xpath = "//*[@id=\"__BVID__68\"]//div//a//button[@class=\"bg-main text-white\"]")
+    public WebElement cart1;
+
+    @FindBy (css = "div>ul[id=\"__BVID__65__BV_tab_controls_\"]>li>a[id=\"__BVID__72___BV_tab_button__\"]")
+    public WebElement basket;
+
+    @FindBy (xpath = "//*[@id=\"__BVID__72\"]//div//a//button[@class=\"bg-main text-white\"]")
+    public WebElement cart2;
 
     @FindBy (css = "button a[href=\"/humhum-user/cart\"]")
     public WebElement view;

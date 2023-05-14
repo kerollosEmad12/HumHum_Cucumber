@@ -5,8 +5,6 @@ import io.cucumber.java.en.Then;
 import org.example.pages.P01_HomePage;
 import org.example.pages.P04_OrderPage;
 import org.openqa.selenium.*;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
@@ -16,7 +14,6 @@ public class Order {
     P01_HomePage home = new P01_HomePage();
     P04_OrderPage order = new P04_OrderPage();
     JavascriptExecutor js = (JavascriptExecutor) driver;
-    Actions action = new Actions(driver);
 
     @Given("user go to home page")
     public void step1 ()
@@ -65,8 +62,22 @@ public class Order {
         popup1.click();
 
         Thread.sleep(Duration.ofSeconds(3));
+        //Buy X Get Y
         js.executeScript("arguments[0].scrollIntoView();", order.getY);
         js.executeScript("arguments[0].click();", order.getY);
+        js.executeScript("arguments[0].click();", order.shop);
+        Thread.sleep(Duration.ofSeconds(1));
+        //Buy X Get Gift
+        js.executeScript("arguments[0].scrollIntoView();", order.Gift);
+        js.executeScript("arguments[0].click();", order.Gift);
+        js.executeScript("arguments[0].click();", order.cart1);
+        js.executeScript("arguments[0].click();", order.shop);
+        Thread.sleep(Duration.ofSeconds(1));
+        //Basket
+        js.executeScript("arguments[0].scrollIntoView();", order.basket);
+        js.executeScript("arguments[0].click();", order.basket);
+        Thread.sleep(Duration.ofSeconds(1));
+        js.executeScript("arguments[0].click();", order.cart2);
         Thread.sleep(Duration.ofSeconds(1));
     }
 

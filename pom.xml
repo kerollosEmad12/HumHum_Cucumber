@@ -51,7 +51,7 @@
                     <testFailureIgnore>true</testFailureIgnore>
                     <runOrder>alphabetical</runOrder>
                     <includes>
-                        <include>**/*Runners.java</include>
+                        <include>**/*Runners.java</include> <!-- this should be the name of your runner class -->
                     </includes>
                 </configuration>
             </plugin>
