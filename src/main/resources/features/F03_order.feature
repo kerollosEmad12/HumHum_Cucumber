@@ -1,7 +1,6 @@
-@regression
 Feature: Test order functionality
 @Test
-  Scenario: user could create order for promotions (Buy x get y without assigning a cart allotted to it)
+  Scenario: user could create order for promotions (Buy x get y and Buy X get Gift and Basket)
     Given user go to home page
     And user click on login Btn
     And user enter email
