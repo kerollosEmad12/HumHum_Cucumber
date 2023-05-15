@@ -64,17 +64,23 @@ public class Order {
         Thread.sleep(Duration.ofSeconds(3));
         //Buy X Get Y
         js.executeScript("arguments[0].scrollIntoView();", order.getY);
+        Thread.sleep(Duration.ofSeconds(1));
         js.executeScript("arguments[0].click();", order.getY);
+        Thread.sleep(Duration.ofSeconds(1));
         js.executeScript("arguments[0].click();", order.shop);
         Thread.sleep(Duration.ofSeconds(1));
         //Buy X Get Gift
         js.executeScript("arguments[0].scrollIntoView();", order.Gift);
+        Thread.sleep(Duration.ofSeconds(1));
         js.executeScript("arguments[0].click();", order.Gift);
+        Thread.sleep(Duration.ofSeconds(1));
         js.executeScript("arguments[0].click();", order.cart1);
+        Thread.sleep(Duration.ofSeconds(1));
         js.executeScript("arguments[0].click();", order.shop);
         Thread.sleep(Duration.ofSeconds(1));
         //Basket
         js.executeScript("arguments[0].scrollIntoView();", order.basket);
+        Thread.sleep(Duration.ofSeconds(1));
         js.executeScript("arguments[0].click();", order.basket);
         Thread.sleep(Duration.ofSeconds(1));
         js.executeScript("arguments[0].click();", order.cart2);

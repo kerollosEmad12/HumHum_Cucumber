@@ -56,6 +56,7 @@
                 </configuration>
             </plugin>
 
+
             <plugin>
                 <!-- https://repo.maven.apache.org/maven2/net/masterthought/cucumber-reporting/ -->
                 <groupId>net.masterthought</groupId>
@@ -79,7 +80,6 @@
                     </execution>
                 </executions>
             </plugin>
-
         </plugins>
 
     </build>
