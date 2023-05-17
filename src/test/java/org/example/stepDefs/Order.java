@@ -58,7 +58,7 @@ public class Order {
         synchronized (driver){
             driver.wait(10000);
         }
-        WebElement popup1 = driver.findElement(By.cssSelector("button[class=\"mfp-close\"]"));
+        WebElement popup1 = driver.findElement(By.cssSelector("div button[class=\"mfp-close\"]"));
         popup1.click();
 
         Thread.sleep(Duration.ofSeconds(3));
