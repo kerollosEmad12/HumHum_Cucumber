@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.example</groupId>
-    <artifactId>HumHum_Project</artifactId>
+    <artifactId>HumHumProject</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <dependencies>
