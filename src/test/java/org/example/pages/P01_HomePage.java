@@ -12,7 +12,7 @@ public class P01_HomePage {
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy (css = "button[title=\"Close (Esc)\"]")
+    @FindBy (className = "mfp-close")
     public WebElement popup;
 
     @FindBy (css = "div[class=\"login collapsed\"]")
