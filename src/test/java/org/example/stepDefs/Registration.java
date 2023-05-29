@@ -10,8 +10,10 @@ import org.example.pages.P02_RegisterPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.support.Color;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.asserts.SoftAssert;
 
 import java.time.Duration;
 
@@ -36,11 +38,11 @@ public class Registration {
 
         if (home.popup.isDisplayed())
         {
-            home.popup.click();
+            js.executeScript("arguments[0].click();", home.popup);
         }
 
         //Open login icon
-        home.registerTab.click();
+        js.executeScript("arguments[0].click();", home.registerTab);
         Thread.sleep(Duration.ofSeconds(3));
     }
 
@@ -56,14 +58,14 @@ public class Registration {
         synchronized (driver){
             driver.wait(10000);
         }
-        register.create.click();
+        js.executeScript("arguments[0].click();", register.create);
 
     }
 
     @When("user select title")
     public void step4()
     {
-        register.title.click();
+        js.executeScript("arguments[0].click();", register.title);
     }
 
     @And("user write first name and last name")
@@ -203,6 +205,20 @@ public class Registration {
     public void step22()
     {
         js.executeScript("arguments[0].click();", register.submit);
+
+        //1- message content or equal "First name is mandatory
+        SoftAssert soft = new SoftAssert();
+        String actualMsg = driver.findElement(By.cssSelector("div[class=\"col-lg-5\"] fieldset[class=\"form-group\"] div[class=\"error\"]")).getText();
+        soft.assertTrue(actualMsg.contains("First name is mandatory"),
+        "actualMsg : "+actualMsg +" | "+ "expected Msg : "+"First name is mandatory"
+        );
+
+        //2- message color is red using RGBA or Hex
+        String actualColorRGBA = driver.findElement(By.cssSelector("div[class=\"col-lg-5\"] fieldset[class=\"form-group\"] div[class=\"error\"]")).getCssValue("    --main-color");
+        String actualColorHex = Color.fromString(actualColorRGBA).asHex();
+        soft.assertEquals(actualColorHex, "#EF4923");
+
+        soft.assertAll();
     }
 
     @Given("user Navigate to home page")

@@ -33,7 +33,7 @@ public class Hooks {
         driver.manage().window().maximize();
 
         //3.2 Set Implicit wait
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(7));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 
     }
 

@@ -9,5 +9,8 @@
         <module name="HumHumProject" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="HumHum_Project" target="19" />
+    </bytecodeTargetLevel>
   </component>
 </project>
