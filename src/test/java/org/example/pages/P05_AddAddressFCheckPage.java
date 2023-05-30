@@ -61,6 +61,9 @@ public class P05_AddAddressFCheckPage {
     @FindBy (id = "postCode")
     public WebElement postCode;
 
+    @FindBy (css = "div :nth-of-type(3) input[class=\"custom-file-input\"]")
+    public WebElement browse;
+
     @FindBy (css = "button[class=\"btn login-button bg-main m-0 mt-4 py-3 px-5 text-white text-center w-auto btn-secondary\"]")
     public WebElement btn;
 }

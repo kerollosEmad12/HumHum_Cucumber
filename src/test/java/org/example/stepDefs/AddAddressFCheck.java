@@ -118,6 +118,9 @@ public class AddAddressFCheck {
     public void step14() throws InterruptedException {
         address.postCode.sendKeys("12569");
         Thread.sleep(Duration.ofSeconds(2));
+
+        address.browse.sendKeys("C:\\Users\\Fabrica Dev\\Pictures\\iTop Screenshot\\HumHum\\2.png");
+        Thread.sleep(Duration.ofSeconds(2));
     }
 
     @Then("new address is created successfully")
@@ -197,6 +200,9 @@ public class AddAddressFCheck {
     public void step24() throws InterruptedException {
         address.postCode.sendKeys("12569");
         Thread.sleep(Duration.ofSeconds(2));
+
+        address.browse.sendKeys("C:\\Users\\Fabrica Dev\\Pictures\\iTop Screenshot\\HumHum\\2.png");
+        Thread.sleep(Duration.ofSeconds(2));
     }
 
     @Then("new  address is created successfully")
@@ -216,5 +222,73 @@ public class AddAddressFCheck {
         soft.assertEquals(actualColorHex, "#ef4923");
 
         soft.assertAll();
+    }
+
+    @And("user click on  cart icon and click on checkout")
+    public void step26() throws InterruptedException {
+        Actions action = new Actions(driver);
+        action.moveToElement(address.cart).build().perform();
+
+        js.executeScript("arguments[0].click();", address.check);
+        Thread.sleep(Duration.ofSeconds(2));
+    }
+
+    @And("click  on  new address")
+    public void step27() throws InterruptedException {
+        Thread.sleep(Duration.ofSeconds(5));
+        js.executeScript("arguments[0].scrollIntoView();", address.label);
+        Thread.sleep(Duration.ofSeconds(2));
+        js.executeScript("arguments[0].click();", address.label);
+        Thread.sleep(Duration.ofSeconds(2));
+    }
+
+    @When("user  choose  province")
+    public void step28() throws InterruptedException {
+        address.province.click();
+        Thread.sleep(Duration.ofSeconds(2));
+    }
+
+    @And("user enter  the city")
+    public void step29() throws InterruptedException {
+        address.city2.click();
+        Thread.sleep(Duration.ofSeconds(2));
+    }
+
+    @And("user  enter  street")
+    public void step30() throws InterruptedException {
+        address.street.sendKeys("2");
+        Thread.sleep(Duration.ofSeconds(2));
+    }
+
+    @And("user  enter name")
+    public void step31() throws InterruptedException {
+        address.name1.click();
+        Thread.sleep(Duration.ofSeconds(2));
+    }
+
+    @And("user  enter  floor")
+    public void step32() throws InterruptedException {
+        address.floor.sendKeys("2");
+        Thread.sleep(Duration.ofSeconds(2));
+    }
+
+    @And("user  enter  home number")
+    public void step33() throws InterruptedException {
+        address.homeNum.sendKeys("5246945");
+        Thread.sleep(Duration.ofSeconds(2));
+    }
+
+    @And("user  enter  zip code")
+    public void step34() throws InterruptedException {
+        address.postCode.sendKeys("12569");
+        Thread.sleep(Duration.ofSeconds(2));
+
+        address.browse.sendKeys("C:\\Users\\Fabrica Dev\\Pictures\\iTop Screenshot\\HumHum\\2.png");
+        Thread.sleep(Duration.ofSeconds(2));
+    }
+
+    @Then("new  address  is created successfully")
+    public void step35() {
+        js.executeScript("arguments[0].click();", address.btn);
     }
 }
