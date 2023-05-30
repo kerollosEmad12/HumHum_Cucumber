@@ -37,14 +37,20 @@ public class P05_AddAddressFCheckPage {
     @FindBy (css = "form[class=\"account-information-form\"] div[class=\"col-lg-4\"]:nth-of-type(2) select option[value=\"3\"]")
     public WebElement province;
 
+    @FindBy (css = "form[class=\"account-information-form\"] div[class=\"col-lg-4\"]:nth-of-type(3) select option[value=\"null\"]")
+    public WebElement city1;
+
     @FindBy (css = "form[class=\"account-information-form\"] div[class=\"col-lg-4\"]:nth-of-type(3) select option[value=\"6\"]")
-    public WebElement city;
+    public WebElement city2;
 
     @FindBy (id = "street")
     public WebElement street;
 
+    @FindBy (css = "form[class=\"account-information-form\"] div[class=\"col-lg-6\"]:nth-of-type(5) select[class=\"custom-select\"]>option[value=\"Office\"]")
+    public WebElement name1;
+
     @FindBy (css = "form[class=\"account-information-form\"] div[class=\"col-lg-6\"]:nth-of-type(5) select[class=\"custom-select\"]>option[value=\"null\"]")
-    public WebElement name;
+    public WebElement name2;
 
     @FindBy (id = "floor")
     public WebElement floor;

@@ -86,7 +86,7 @@ public class AddAddressFCheck {
 
     @And("keep city an empty")
     public void step9() throws InterruptedException {
-        address.city.click();
+        address.city1.click();
         Thread.sleep(Duration.ofSeconds(2));
     }
 
@@ -98,7 +98,7 @@ public class AddAddressFCheck {
 
     @And("user enter name")
     public void step11() throws InterruptedException {
-        address.name.click();
+        address.name1.click();
         Thread.sleep(Duration.ofSeconds(2));
     }
 
@@ -165,7 +165,7 @@ public class AddAddressFCheck {
 
     @And("user enter the city")
     public void step19() throws InterruptedException {
-        address.city.click();
+        address.city2.click();
         Thread.sleep(Duration.ofSeconds(2));
     }
 
@@ -177,7 +177,7 @@ public class AddAddressFCheck {
 
     @And("keep the name is an empty")
     public void step21() throws InterruptedException {
-        address.name.click();
+        address.name2.click();
         Thread.sleep(Duration.ofSeconds(2));
     }
 
