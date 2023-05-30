@@ -25,7 +25,7 @@ public class P05_AddAddressFCheckPage {
     @FindBy (css = "div[class=\"cart d-flex justify-content-between align-items-center\"]")
     public WebElement cart;
 
-    @FindBy (css = "div[class=\"navigation my-4\"] a")
+    @FindBy (css = "div a[href=\"/humhum-user/cart\"]")
     public WebElement check;
 
     @FindBy (css = "label input[value=\"newAddress\"]")
