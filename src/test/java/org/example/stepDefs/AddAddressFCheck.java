@@ -202,5 +202,19 @@ public class AddAddressFCheck {
     @Then("new  address is created successfully")
     public void step25() {
         js.executeScript("arguments[0].click();", address.btn);
+
+        //1- message content or equal "The name field is mandatory".
+        SoftAssert soft = new SoftAssert();
+        String actualMsg = driver.findElement(By.cssSelector("form[class=\"account-information-form\"] div[class=\"col-lg-6\"]:nth-of-type(5) div[class=\"error\"]")).getText();
+        soft.assertTrue(actualMsg.contains("The name field is mandatory."),
+                "actualMsg : "+actualMsg +" | "+ "expected Msg : "+"The name field is mandatory."
+        );
+
+        //2- message color is red using RGBA or Hex
+        String actualColorRGBA = driver.findElement(By.cssSelector("form[class=\"account-information-form\"] div[class=\"col-lg-6\"]:nth-of-type(5) div[class=\"error\"]")).getCssValue("color");
+        String actualColorHex = Color.fromString(actualColorRGBA).asHex();
+        soft.assertEquals(actualColorHex, "#ef4923");
+
+        soft.assertAll();
     }
 }
