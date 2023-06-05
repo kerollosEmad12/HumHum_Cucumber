@@ -1,4 +1,4 @@
-@regression
+@Login
   Feature: Test Login functionality
 
     Scenario: user could create new account with invalid data (Email is an empty) for Login (Negative scenario)
@@ -28,3 +28,10 @@
       And User Enter Valid email
       And Keep password is an empty
       Then Login Is successfully
+
+    Scenario:  user could create new account with invalid data (pass is not matched with email) for Login (Negative scenario)
+      Given User  Navigate To Home Page
+      And User  Click On Login icon
+      And User  Enter Valid email
+      And user enter invalid password
+      Then Login  Is successfully
