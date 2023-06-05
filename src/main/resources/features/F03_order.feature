@@ -1,4 +1,4 @@
-@regression
+@order
 Feature: Test order functionality
 
   Scenario: user could create order for promotions (Buy x get y and Buy X get Gift and Basket)

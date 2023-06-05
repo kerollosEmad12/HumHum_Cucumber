@@ -35,11 +35,7 @@ public class Registration {
     public void step2() throws InterruptedException
     {
         Thread.sleep(Duration.ofSeconds(3));
-
-        if (home.popup.isDisplayed())
-        {
-            js.executeScript("arguments[0].click();", home.popup);
-        }
+        js.executeScript("arguments[0].click();", home.popup);
 
         //Open login icon
         js.executeScript("arguments[0].click();", home.registerTab);
@@ -127,13 +123,11 @@ public class Registration {
     @And("user click on login Button")
     public void step13() throws InterruptedException
     {
-        if (home.popup.isDisplayed())
-        {
-            home.popup.click();
-        }
+        Thread.sleep(Duration.ofSeconds(3));
+        js.executeScript("arguments[0].click();", home.popup);
 
         //Open login icon
-        home.registerTab.click();
+        js.executeScript("arguments[0].click();", home.registerTab);
         Thread.sleep(Duration.ofSeconds(3));
     }
 
@@ -148,7 +142,7 @@ public class Registration {
         synchronized (driver){
             driver.wait(10000);
         }
-        register.create.click();
+        js.executeScript("arguments[0].click();", register.create);
     }
 
     @When("User select title")
@@ -230,13 +224,11 @@ public class Registration {
     @And("user Click on login Button")
     public void step24() throws InterruptedException
     {
-        if (home.popup.isDisplayed())
-        {
-            home.popup.click();
-        }
+        Thread.sleep(Duration.ofSeconds(3));
+        js.executeScript("arguments[0].click();", home.popup);
 
         //Open login icon
-        home.registerTab.click();
+        js.executeScript("arguments[0].click();", home.registerTab);
         Thread.sleep(Duration.ofSeconds(3));
 
     }
@@ -252,7 +244,7 @@ public class Registration {
         synchronized (driver){
             driver.wait(10000);
         }
-        register.create.click();
+        js.executeScript("arguments[0].click();", register.create);
     }
 
     @When("User Select title")
@@ -320,13 +312,11 @@ public class Registration {
     @And("stepB user Click on login Button")
     public void step35() throws InterruptedException
     {
-        if (home.popup.isDisplayed())
-        {
-            js.executeScript("arguments[0].click();", home.popup);
-        }
+        Thread.sleep(Duration.ofSeconds(3));
+        js.executeScript("arguments[0].click();", home.popup);
 
         //Open login icon
-        home.registerTab.click();
+        js.executeScript("arguments[0].click();", home.registerTab);
         Thread.sleep(Duration.ofSeconds(3));
     }
 
@@ -342,7 +332,7 @@ public class Registration {
         synchronized (driver){
             driver.wait(10000);
         }
-        register.create.click();
+        js.executeScript("arguments[0].click();", register.create);
     }
 
     @When("stepD User Select title")
@@ -409,14 +399,11 @@ public class Registration {
 
     @And("step[B] user Click on login Button")
     public void step46() throws InterruptedException {
-        Thread.sleep(Duration.ofSeconds(10));
-        if (home.popup.isDisplayed())
-        {
-            home.popup.click();
-        }
+        Thread.sleep(Duration.ofSeconds(3));
+        js.executeScript("arguments[0].click();", home.popup);
 
         //Open login icon
-        home.registerTab.click();
+        js.executeScript("arguments[0].click();", home.registerTab);
         Thread.sleep(Duration.ofSeconds(3));
     }
 
@@ -431,7 +418,7 @@ public class Registration {
         synchronized (driver){
             driver.wait(10000);
         }
-        register.create.click();
+        js.executeScript("arguments[0].click();", register.create);
     }
 
     @When("step[D] User Select title")
@@ -503,14 +490,11 @@ public class Registration {
 
     @And("Step[B] user Click on login Button")
     public void step57() throws InterruptedException {
-        Thread.sleep(Duration.ofSeconds(10));
-        if (home.popup.isDisplayed())
-        {
-            home.popup.click();
-        }
+        Thread.sleep(Duration.ofSeconds(3));
+        js.executeScript("arguments[0].click();", home.popup);
 
         //Open login icon
-        home.registerTab.click();
+        js.executeScript("arguments[0].click();", home.registerTab);
         Thread.sleep(Duration.ofSeconds(3));
     }
 
@@ -525,7 +509,7 @@ public class Registration {
         synchronized (driver){
             driver.wait(10000);
         }
-        register.create.click();
+        js.executeScript("arguments[0].click();", register.create);
     }
 
     @When("Step[D] User Select title")
@@ -597,14 +581,11 @@ public class Registration {
 
     @And("STep[B] user Click on login Button")
     public void step69() throws InterruptedException {
-        Thread.sleep(Duration.ofSeconds(10));
-        if (home.popup.isDisplayed())
-        {
-            home.popup.click();
-        }
+        Thread.sleep(Duration.ofSeconds(3));
+        js.executeScript("arguments[0].click();", home.popup);
 
         //Open login icon
-        home.registerTab.click();
+        js.executeScript("arguments[0].click();", home.registerTab);
         Thread.sleep(Duration.ofSeconds(3));
     }
 
@@ -619,7 +600,7 @@ public class Registration {
         synchronized (driver){
             driver.wait(10000);
         }
-        register.create.click();
+        js.executeScript("arguments[0].click();", register.create);
     }
 
     @When("STep[D] User Select title")
@@ -692,15 +673,11 @@ public class Registration {
 
     @And("STEp[B] user Click on login Button")
     public void step80() throws InterruptedException {
-        Thread.sleep(Duration.ofSeconds(10));
-        if (home.popup.isDisplayed())
-        {
-            home.popup.click();
-        }
-        Thread.sleep(Duration.ofSeconds(10));
+        Thread.sleep(Duration.ofSeconds(3));
+        js.executeScript("arguments[0].click();", home.popup);
 
         //Open login icon
-        register.firstName.click();
+        js.executeScript("arguments[0].click();", home.registerTab);
         Thread.sleep(Duration.ofSeconds(3));
     }
 
@@ -715,7 +692,7 @@ public class Registration {
         synchronized (driver){
             driver.wait(10000);
         }
-        register.create.click();
+        js.executeScript("arguments[0].click();", register.create);
     }
 
     @When("STEp[D] User Select title")
@@ -790,15 +767,11 @@ public class Registration {
 
     @And("STEP[B] user Click on login Button")
     public void step91() throws InterruptedException {
-        Thread.sleep(Duration.ofSeconds(10));
-        if (home.popup.isDisplayed())
-        {
-            home.popup.click();
-        }
-        Thread.sleep(Duration.ofSeconds(10));
+        Thread.sleep(Duration.ofSeconds(3));
+        js.executeScript("arguments[0].click();", home.popup);
 
         //Open login icon
-        home.registerTab.click();
+        js.executeScript("arguments[0].click();", home.registerTab);
         Thread.sleep(Duration.ofSeconds(3));
     }
 
@@ -813,7 +786,7 @@ public class Registration {
         synchronized (driver){
             driver.wait(10000);
         }
-        register.create.click();
+        js.executeScript("arguments[0].click();", register.create);
     }
 
 
@@ -888,15 +861,11 @@ public class Registration {
 
     @And("STEP[B] User Click on login Button")
     public void step102() throws InterruptedException {
-        Thread.sleep(Duration.ofSeconds(10));
-        if (home.popup.isDisplayed())
-        {
-            home.popup.click();
-        }
-        Thread.sleep(Duration.ofSeconds(10));
+        Thread.sleep(Duration.ofSeconds(3));
+        js.executeScript("arguments[0].click();", home.popup);
 
         //Open login icon
-        home.registerTab.click();
+        js.executeScript("arguments[0].click();", home.registerTab);
         Thread.sleep(Duration.ofSeconds(3));
     }
 
@@ -911,7 +880,7 @@ public class Registration {
         synchronized (driver){
             driver.wait(10000);
         }
-        register.create.click();
+        js.executeScript("arguments[0].click();", register.create);
     }
 
     @When("STEP[D] User Select Title")
@@ -985,15 +954,11 @@ public class Registration {
 
     @And("STEP[B] User Click On login Button")
     public void step113() throws InterruptedException {
-        Thread.sleep(Duration.ofSeconds(10));
-        if (home.popup.isDisplayed())
-        {
-            home.popup.click();
-        }
-        Thread.sleep(Duration.ofSeconds(10));
+        Thread.sleep(Duration.ofSeconds(3));
+        js.executeScript("arguments[0].click();", home.popup);
 
         //Open login icon
-        home.registerTab.click();
+        js.executeScript("arguments[0].click();", home.registerTab);
         Thread.sleep(Duration.ofSeconds(3));
     }
 
@@ -1008,7 +973,7 @@ public class Registration {
         synchronized (driver){
             driver.wait(10000);
         }
-        register.create.click();
+        js.executeScript("arguments[0].click();", register.create);
     }
 
     @When("STEP[d] User Select Title")
@@ -1082,15 +1047,11 @@ public class Registration {
 
     @And("STEP[B] User Click On Login Button")
     public void step124() throws InterruptedException {
-        Thread.sleep(Duration.ofSeconds(10));
-        if (home.popup.isDisplayed())
-        {
-            home.popup.click();
-        }
-        Thread.sleep(Duration.ofSeconds(10));
+        Thread.sleep(Duration.ofSeconds(3));
+        js.executeScript("arguments[0].click();", home.popup);
 
         //Open login icon
-        home.registerTab.click();
+        js.executeScript("arguments[0].click();", home.registerTab);
         Thread.sleep(Duration.ofSeconds(3));
     }
 
@@ -1105,7 +1066,7 @@ public class Registration {
         synchronized (driver){
             driver.wait(10000);
         }
-        register.create.click();
+        js.executeScript("arguments[0].click();", register.create);
     }
 
     @When("STEP[d] USER Select Title")
@@ -1179,15 +1140,11 @@ public class Registration {
 
     @And("STEP[B] User Click On Login button")
     public void step135() throws InterruptedException {
-        Thread.sleep(Duration.ofSeconds(10));
-        if (home.popup.isDisplayed())
-        {
-            home.popup.click();
-        }
-        Thread.sleep(Duration.ofSeconds(10));
+        Thread.sleep(Duration.ofSeconds(3));
+        js.executeScript("arguments[0].click();", home.popup);
 
         //Open login icon
-        home.registerTab.click();
+        js.executeScript("arguments[0].click();", home.registerTab);
         Thread.sleep(Duration.ofSeconds(3));
     }
 
@@ -1202,7 +1159,7 @@ public class Registration {
         synchronized (driver){
             driver.wait(10000);
         }
-        register.create.click();
+        js.executeScript("arguments[0].click();", register.create);
     }
 
     @When("STEP[d] USER SELECT Title")

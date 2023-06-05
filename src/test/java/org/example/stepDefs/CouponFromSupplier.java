@@ -110,7 +110,7 @@ public class CouponFromSupplier {
 
     @And("user enter code")
     public void step12() throws InterruptedException {
-        coupon.code.sendKeys("5555555555");
+        coupon.code.sendKeys("2-5555555555");
         Thread.sleep(Duration.ofSeconds(2));
     }
 

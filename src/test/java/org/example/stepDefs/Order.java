@@ -23,15 +23,12 @@ public class Order {
 
     @And("user click on login Btn")
     public void step2 () throws InterruptedException {
-        Thread.sleep(Duration.ofSeconds(3));
-
-        if (home.popup.isDisplayed())
-        {
-            home.popup.click();
-        }
+        Thread.sleep(Duration.ofSeconds(10));
+        js.executeScript("arguments[0].click();", home.popup);
+        Thread.sleep(Duration.ofSeconds(10));
 
         //Open login icon
-        home.registerTab.click();
+        js.executeScript("arguments[0].click();", home.registerTab);
         Thread.sleep(Duration.ofSeconds(3));
     }
 
@@ -59,7 +56,7 @@ public class Order {
             driver.wait(10000);
         }
         WebElement popup1 = driver.findElement(By.cssSelector("div button[class=\"mfp-close\"]"));
-        popup1.click();
+        js.executeScript("arguments[0].click();", popup1);
 
         Thread.sleep(Duration.ofSeconds(3));
         //Buy X Get Y
@@ -89,7 +86,7 @@ public class Order {
 
     @And("user click on view cart button")
     public void step7() throws InterruptedException {
-        order.view.click();
+        js.executeScript("arguments[0].click();", order.view);
         Thread.sleep(Duration.ofSeconds(2));
     }
 
@@ -97,7 +94,7 @@ public class Order {
     public void step8()
     {
         order.coupon.sendKeys("6666666");
-        order.apply.click();
+        js.executeScript("arguments[0].click();", order.apply);
     }
 
     @And("mark on payment checkbox")

@@ -1,3 +1,4 @@
+@coupon
 Feature: Add coupon from supplier
   Background: The default data
     Given user enter to supplier page
