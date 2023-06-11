@@ -149,5 +149,68 @@ public class AddProductFromSupplier {
         product.save2.click();
         Thread.sleep(Duration.ofSeconds(2));
         product.ok2.click();
+        Thread.sleep(Duration.ofSeconds(2));
+    }
+
+    @And("user enter price BtoB")
+    public void step21() throws InterruptedException {
+        product.priceB2B.sendKeys("12.5");
+        Thread.sleep(Duration.ofSeconds(2));
+    }
+
+    @And("user enter wight")
+    public void step22() throws InterruptedException {
+        product.weightB2B.sendKeys("300");
+        Thread.sleep(Duration.ofSeconds(2));
+        product.unit1.click();
+        Thread.sleep(Duration.ofSeconds(2));
+        product.unit2.click();
+        Thread.sleep(Duration.ofSeconds(2));
+    }
+
+    @And("user enter stock quantity")
+    public void step23() throws InterruptedException {
+        product.quantity.sendKeys("1000");
+        Thread.sleep(Duration.ofSeconds(2));
+    }
+
+    @And("user enter main order")
+    public void step24() throws InterruptedException {
+        product.mainOrder.sendKeys("5");
+        Thread.sleep(Duration.ofSeconds(2));
+    }
+
+    @And("user enter low stock")
+    public void step25() throws InterruptedException {
+        product.lowStock.sendKeys("500");
+        Thread.sleep(Duration.ofSeconds(2));
+    }
+
+    @When("user enter return time")
+    public void step26() throws InterruptedException {
+        product.ReturnTime1.click();
+        Thread.sleep(Duration.ofSeconds(2));
+        product.ReturnTime2.click();
+        Thread.sleep(Duration.ofSeconds(2));
+    }
+
+    @When("user choose delivery time")
+    public void step27() throws InterruptedException {
+        product.delivery1.click();
+        Thread.sleep(Duration.ofSeconds(2));
+        product.delivery2.click();
+        Thread.sleep(Duration.ofSeconds(2));
+    }
+
+    @And("user click on ask admin to publish button")
+    public void step28() throws InterruptedException {
+        product.ask.click();
+        Thread.sleep(Duration.ofSeconds(2));
+    }
+
+    @Then("BtoB is publish successfully")
+    public void step29() throws InterruptedException {
+        product.save3.click();
+        Thread.sleep(Duration.ofSeconds(2));
     }
 }

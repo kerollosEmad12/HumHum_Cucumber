@@ -21,3 +21,12 @@ Feature: Add product from supplier
     And user enter main image
     And user enter product image
     Then product is created successfully
+    And user enter price BtoB
+    And user enter wight
+    And user enter stock quantity
+    And user enter main order
+    And user enter low stock
+    When user enter return time
+    When user choose delivery time
+    And user click on ask admin to publish button
+    Then BtoB is publish successfully

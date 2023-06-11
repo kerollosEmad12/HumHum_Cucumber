@@ -95,5 +95,44 @@ public class P07_AddProductFSupplierPage {
 
     @FindBy (css = "div[class=\"swal2-container swal2-center swal2-backdrop-show\"] div:nth-child(15) button[class=\"swal2-confirm swal2-styled\"]")
     public WebElement ok2;
+
+    @FindBy (css = "div:nth-child(2) div div:nth-child(2) div input[id=\"b2bprice\"]")
+    public WebElement priceB2B;
+
+    @FindBy (id = "b2bweight")
+    public WebElement weightB2B;
+
+    @FindBy (id = "b2bunit_id")
+    public WebElement unit1;
+
+    @FindBy (css = "select[id=\"b2bunit_id\"] option:nth-child(2)")
+    public WebElement unit2;
+
+    @FindBy (id = "b2bquantity")
+    public WebElement quantity;
+
+    @FindBy (id = "b2bmin_order_quantity")
+    public WebElement mainOrder;
+
+    @FindBy (id = "b2balert_quantity")
+    public WebElement lowStock;
+
+    @FindBy (id = "b2breturn_time_id")
+    public WebElement ReturnTime1;
+
+    @FindBy (css = "select[id=\"b2breturn_time_id\"] option:nth-child(2)")
+    public WebElement ReturnTime2;
+
+    @FindBy (id = "b2bdelivery_time_id")
+    public WebElement delivery1;
+
+    @FindBy (css = "select[id=\"b2bdelivery_time_id\"] option:nth-child(2)")
+    public WebElement delivery2;
+
+    @FindBy (id = "b2bstatus")
+    public WebElement ask;
+
+    @FindBy (css = "app-product-meta-form:nth-child(1) div div button[type=\"submit\"]")
+    public WebElement save3;
 }
 
