@@ -76,7 +76,7 @@ public class P07_AddProductFSupplierPage {
     public WebElement sellingCount3;
 
     @FindBy (css = "app-product-basic-form div div:nth-child(2) div div:nth-child(10) div input")
-    public WebElement test;
+    public WebElement DynamicInput;
 
     @FindBy (css = "button[type=\"submit\"]")
     public WebElement save1;
