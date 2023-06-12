@@ -21,6 +21,8 @@ public class P05_AddAddressFCheckPage {
 
     @FindBy (css = "button[type=\"submit\"]")
     public WebElement submit;
+    @FindBy (xpath = "(//*[@class=\"tab-pane active\"]//a//button)[2]")
+    public WebElement getY;
 
     @FindBy (css = "div[class=\"cart d-flex justify-content-between align-items-center\"]")
     public WebElement cart;

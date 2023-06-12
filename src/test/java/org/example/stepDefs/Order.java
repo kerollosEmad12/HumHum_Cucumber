@@ -5,6 +5,7 @@ import io.cucumber.java.en.Then;
 import org.example.pages.P01_HomePage;
 import org.example.pages.P04_OrderPage;
 import org.openqa.selenium.*;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
@@ -49,13 +50,7 @@ public class Order {
     @And("user choose product promotion")
     public void step6() throws InterruptedException {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-        wait.withTimeout(Duration.ofSeconds(5));
-        wait.pollingEvery(Duration.ofMillis(500));
-        wait.ignoring(NoSuchElementException.class);
-        synchronized (driver){
-            driver.wait(10000);
-        }
-        WebElement popup1 = driver.findElement(By.cssSelector("div button[class=\"mfp-close\"]"));
+        WebElement popup1 = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("div button[class=\"mfp-close\"]")));
         js.executeScript("arguments[0].click();", popup1);
 
         Thread.sleep(Duration.ofSeconds(3));

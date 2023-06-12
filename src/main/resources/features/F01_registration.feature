@@ -1,4 +1,4 @@
-@registration
+@regression
 Feature: Test automation functionality
 
   Scenario: user could create new account with valid data for B2C Register (positive scenario)

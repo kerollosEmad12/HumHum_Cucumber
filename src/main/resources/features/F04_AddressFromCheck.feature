@@ -1,4 +1,4 @@
-@Test
+
 Feature: Add address from checkout
   Background: user enter data
     Given user enter to home page

@@ -8,8 +8,10 @@ import org.example.pages.P01_HomePage;
 import org.example.pages.P05_AddAddressFCheckPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.Color;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.asserts.SoftAssert;
 
 import java.time.Duration;
@@ -51,73 +53,81 @@ public class AddAddressFCheck {
         Thread.sleep(Duration.ofSeconds(2));
 
         js.executeScript("arguments[0].click();", address.submit);
-        Thread.sleep(Duration.ofSeconds(5));
+        Thread.sleep(Duration.ofSeconds(10));
     }
 
     @And("mouse hover on cart icon and click on checkout")
     public void step5() throws InterruptedException {
-        Actions action = new Actions(driver);
-        action.moveToElement(address.cart).build().perform();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        WebElement popup1 = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("div button[class=\"mfp-close\"]")));
+        js.executeScript("arguments[0].click();", popup1);
+
+        js.executeScript("arguments[0].scrollIntoView();", address.getY);
+        js.executeScript("arguments[0].click();", address.getY);
+
+        WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(30));
+        WebElement cart = wait1.until(ExpectedConditions.elementToBeClickable(By.cssSelector("div[class=\"cart d-flex justify-content-between align-items-center\"]")));
+        js.executeScript("arguments[0].click();", cart);
 
         js.executeScript("arguments[0].click();", address.check);
-        Thread.sleep(Duration.ofSeconds(2));
+        Thread.sleep(Duration.ofSeconds(5));
     }
 
     @And("click on new address")
     public void step6() throws InterruptedException {
         Thread.sleep(Duration.ofSeconds(5));
         js.executeScript("arguments[0].scrollIntoView();", address.label);
-        Thread.sleep(Duration.ofSeconds(2));
+        Thread.sleep(Duration.ofSeconds(5));
         js.executeScript("arguments[0].click();", address.label);
-        Thread.sleep(Duration.ofSeconds(2));
+        Thread.sleep(Duration.ofSeconds(5));
     }
 
     @When("user choose country")
     public void step7() throws InterruptedException {
         address.country.click();
-        Thread.sleep(Duration.ofSeconds(2));
+        Thread.sleep(Duration.ofSeconds(5));
     }
 
     @When("user choose province")
     public void step8() throws InterruptedException {
         address.province.click();
-        Thread.sleep(Duration.ofSeconds(2));
+        Thread.sleep(Duration.ofSeconds(5));
     }
 
     @And("keep city an empty")
     public void step9() throws InterruptedException {
         address.city1.click();
-        Thread.sleep(Duration.ofSeconds(2));
+        Thread.sleep(Duration.ofSeconds(5));
     }
 
     @And("user enter street")
     public void step10() throws InterruptedException {
         address.street.sendKeys("2");
-        Thread.sleep(Duration.ofSeconds(2));
+        Thread.sleep(Duration.ofSeconds(5));
     }
 
     @And("user enter name")
     public void step11() throws InterruptedException {
         address.name1.click();
-        Thread.sleep(Duration.ofSeconds(2));
+        Thread.sleep(Duration.ofSeconds(5));
     }
 
     @And("user enter floor")
     public void step12() throws InterruptedException {
         address.floor.sendKeys("2");
-        Thread.sleep(Duration.ofSeconds(2));
+        Thread.sleep(Duration.ofSeconds(5));
     }
 
     @And("user enter home number")
     public void step13() throws InterruptedException {
         address.homeNum.sendKeys("5246945");
-        Thread.sleep(Duration.ofSeconds(2));
+        Thread.sleep(Duration.ofSeconds(5));
     }
 
     @And("user enter zip code")
     public void step14() throws InterruptedException {
         address.postCode.sendKeys("12569");
-        Thread.sleep(Duration.ofSeconds(2));
+        Thread.sleep(Duration.ofSeconds(5));
 
         address.browse.sendKeys("C:\\Users\\Fabrica Dev\\Pictures\\iTop Screenshot\\HumHum\\2.png");
         Thread.sleep(Duration.ofSeconds(2));
@@ -144,20 +154,24 @@ public class AddAddressFCheck {
 
     @And("user click on cart icon and click on checkout")
     public void step16() throws InterruptedException {
-        Actions action = new Actions(driver);
-        action.moveToElement(address.cart).build().perform();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        WebElement popup1 = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("div button[class=\"mfp-close\"]")));
+        js.executeScript("arguments[0].click();", popup1);
+        WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(30));
+        WebElement cart = wait1.until(ExpectedConditions.elementToBeClickable(By.cssSelector("div[class=\"cart d-flex justify-content-between align-items-center\"]")));
+        js.executeScript("arguments[0].click();", cart);
 
         js.executeScript("arguments[0].click();", address.check);
-        Thread.sleep(Duration.ofSeconds(2));
+        Thread.sleep(Duration.ofSeconds(10));
     }
 
     @And("click  on new address")
     public void step17() throws InterruptedException {
         Thread.sleep(Duration.ofSeconds(5));
         js.executeScript("arguments[0].scrollIntoView();", address.label);
-        Thread.sleep(Duration.ofSeconds(2));
+        Thread.sleep(Duration.ofSeconds(5));
         js.executeScript("arguments[0].click();", address.label);
-        Thread.sleep(Duration.ofSeconds(2));
+        Thread.sleep(Duration.ofSeconds(5));
     }
 
     @When("user  choose province")
@@ -169,31 +183,31 @@ public class AddAddressFCheck {
     @And("user enter the city")
     public void step19() throws InterruptedException {
         address.city2.click();
-        Thread.sleep(Duration.ofSeconds(2));
+        Thread.sleep(Duration.ofSeconds(5));
     }
 
     @And("user  enter street")
     public void step20() throws InterruptedException {
         address.street.sendKeys("2");
-        Thread.sleep(Duration.ofSeconds(2));
+        Thread.sleep(Duration.ofSeconds(5));
     }
 
     @And("keep the name is an empty")
     public void step21() throws InterruptedException {
         address.name2.click();
-        Thread.sleep(Duration.ofSeconds(2));
+        Thread.sleep(Duration.ofSeconds(5));
     }
 
     @And("user  enter floor")
     public void step22() throws InterruptedException {
         address.floor.sendKeys("2");
-        Thread.sleep(Duration.ofSeconds(2));
+        Thread.sleep(Duration.ofSeconds(5));
     }
 
     @And("user  enter home number")
     public void step23() throws InterruptedException {
         address.homeNum.sendKeys("5246945");
-        Thread.sleep(Duration.ofSeconds(2));
+        Thread.sleep(Duration.ofSeconds(5));
     }
 
     @And("user  enter zip code")
@@ -226,11 +240,15 @@ public class AddAddressFCheck {
 
     @And("user click on  cart icon and click on checkout")
     public void step26() throws InterruptedException {
-        Actions action = new Actions(driver);
-        action.moveToElement(address.cart).build().perform();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        WebElement popup1 = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("div button[class=\"mfp-close\"]")));
+        js.executeScript("arguments[0].click();", popup1);
+        WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(30));
+        WebElement cart = wait1.until(ExpectedConditions.elementToBeClickable(By.cssSelector("div[class=\"cart d-flex justify-content-between align-items-center\"]")));
+        js.executeScript("arguments[0].click();", cart);
 
         js.executeScript("arguments[0].click();", address.check);
-        Thread.sleep(Duration.ofSeconds(2));
+        Thread.sleep(Duration.ofSeconds(10));
     }
 
     @And("click  on  new address")

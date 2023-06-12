@@ -1,4 +1,4 @@
-@Login
+@regression
   Feature: Test Login functionality
 
     Scenario: user could create new account with invalid data (Email is an empty) for Login (Negative scenario)

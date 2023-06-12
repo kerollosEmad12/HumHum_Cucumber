@@ -65,9 +65,11 @@ public class Registration {
     }
 
     @And("user write first name and last name")
-    public void step5() {
+    public void step5() throws InterruptedException {
+        Thread.sleep(Duration.ofSeconds(7));
         //Input the first name
         register.firstName.sendKeys("Fabrica");
+        Thread.sleep(Duration.ofSeconds(7));
         //Input the last_name
         register.lastName.sendKeys("Dev");
     }
@@ -152,10 +154,11 @@ public class Registration {
     }
 
     @And("user write first name with one character and valid last name")
-    public void step16()
-    {
+    public void step16() throws InterruptedException {
+        Thread.sleep(Duration.ofSeconds(7));
         //Input the first name
         register.firstName.sendKeys("F");
+        Thread.sleep(Duration.ofSeconds(7));
         //Input the last_name
         register.lastName.sendKeys("CS");
     }
@@ -203,14 +206,14 @@ public class Registration {
         //1- message content or equal "First name is mandatory
         SoftAssert soft = new SoftAssert();
         String actualMsg = driver.findElement(By.cssSelector("div[class=\"col-lg-5\"] fieldset[class=\"form-group\"] div[class=\"error\"]")).getText();
-        soft.assertTrue(actualMsg.contains("First name is mandatory"),
-        "actualMsg : "+actualMsg +" | "+ "expected Msg : "+"First name is mandatory"
+        soft.assertTrue(actualMsg.contains("The first name must be at least 2 characters."),
+        "actualMsg : "+actualMsg +" | "+ "expected Msg : "+"The first name must be at least 2 characters."
         );
 
         //2- message color is red using RGBA or Hex
-        String actualColorRGBA = driver.findElement(By.cssSelector("div[class=\"col-lg-5\"] fieldset[class=\"form-group\"] div[class=\"error\"]")).getCssValue("    --main-color");
+        String actualColorRGBA = driver.findElement(By.cssSelector("div[class=\"col-lg-5\"] fieldset[class=\"form-group\"] div[class=\"error\"]")).getCssValue("color");
         String actualColorHex = Color.fromString(actualColorRGBA).asHex();
-        soft.assertEquals(actualColorHex, "#EF4923");
+        soft.assertEquals(actualColorHex, "#ef4923");
 
         soft.assertAll();
     }
@@ -254,10 +257,11 @@ public class Registration {
     }
 
     @And("user write first name two one character and valid last name")
-    public void step27()
-    {
+    public void step27() throws InterruptedException {
+        Thread.sleep(Duration.ofSeconds(7));
         //Input the first name
         register.firstName.sendKeys("Fa");
+        Thread.sleep(Duration.ofSeconds(7));
         //Input the last_name
         register.lastName.sendKeys("CS");
     }
@@ -271,10 +275,11 @@ public class Registration {
     }
 
     @And("User Enter valid password and confirm password")
-    public void step29()
-    {
+    public void step29() throws InterruptedException {
+        Thread.sleep(Duration.ofSeconds(2));
         //Input the password
         register.pass.sendKeys("Fabrica123!");
+        Thread.sleep(Duration.ofSeconds(2));
         //Input the Confirmation password
         register.ConfirmPass.sendKeys("Fabrica123!");
     }
@@ -342,10 +347,11 @@ public class Registration {
     }
 
     @And("stepE user write valid first name and last name is an empty")
-    public void step38()
-    {
+    public void step38() throws InterruptedException {
+        Thread.sleep(Duration.ofSeconds(7));
         //Input the first name
         register.firstName.sendKeys("Fabrica");
+        Thread.sleep(Duration.ofSeconds(7));
         //Input the last_name
         register.lastName.sendKeys("");
     }
@@ -359,10 +365,11 @@ public class Registration {
     }
 
     @And("stepG User Enter valid password and confirm password")
-    public void step40()
-    {
+    public void step40() throws InterruptedException {
+        Thread.sleep(Duration.ofSeconds(2));
         //Input the password
         register.pass.sendKeys("Fabrica123!");
+        Thread.sleep(Duration.ofSeconds(2));
         //Input the Confirmation password
         register.ConfirmPass.sendKeys("Fabrica123!");
     }
@@ -428,10 +435,11 @@ public class Registration {
     }
 
     @And("step[E] user write valid first name and valid last name")
-    public void step49()
-    {
+    public void step49() throws InterruptedException {
+        Thread.sleep(Duration.ofSeconds(7));
         //Input the first name
         register.firstName.sendKeys("Fabrica");
+        Thread.sleep(Duration.ofSeconds(7));
         //Input the last_name
         register.lastName.sendKeys("Dev");
     }
@@ -519,10 +527,11 @@ public class Registration {
     }
 
     @And("Step[E] user write valid first name and valid last name")
-    public void step60()
-    {
+    public void step60() throws InterruptedException {
+        Thread.sleep(Duration.ofSeconds(7));
         //Input the first name
         register.firstName.sendKeys("Fabrica");
+        Thread.sleep(Duration.ofSeconds(7));
         //Input the last_name
         register.lastName.sendKeys("Dev");
     }
@@ -534,10 +543,11 @@ public class Registration {
     }
 
     @And("Step[G] User Enter valid password and confirm password")
-    public void step62()
-    {
+    public void step62() throws InterruptedException {
+        Thread.sleep(Duration.ofSeconds(2));
         //Input the password
         register.pass.sendKeys("Fabrica123!");
+        Thread.sleep(Duration.ofSeconds(2));
         //Input the Con password
         register.ConfirmPass.sendKeys("Fabrica123!");
     }
@@ -570,7 +580,7 @@ public class Registration {
     @Then("Step[K] New Account is created successfully")
     public void step67() throws InterruptedException {
         Thread.sleep(Duration.ofSeconds(3));
-        register.submit.click();
+        js.executeScript("arguments[0].click();", register.submit);
     }
 
     @Given("STep[A] user Navigate to home page")
@@ -610,10 +620,11 @@ public class Registration {
     }
 
     @And("STep[E] user write valid first name and valid last name")
-    public void step72()
-    {
+    public void step72() throws InterruptedException {
+        Thread.sleep(Duration.ofSeconds(7));
         //Input the first name
         register.firstName.sendKeys("Fabrica");
+        Thread.sleep(Duration.ofSeconds(7));
         //Input the last_name
         register.lastName.sendKeys("Dev");
     }
@@ -625,10 +636,11 @@ public class Registration {
     }
 
     @And("STep[G] User Enter valid password and confirm password")
-    public void step74()
-    {
+    public void step74() throws InterruptedException {
+        Thread.sleep(Duration.ofSeconds(2));
         //Input the password
         register.pass.sendKeys("Fabrica123!");
+        Thread.sleep(Duration.ofSeconds(2));
         //Input the Con password
         register.ConfirmPass.sendKeys("Fabrica123!");
     }
@@ -702,10 +714,11 @@ public class Registration {
     }
 
     @And("STEp[E] user write valid first name and valid last name")
-    public void step83()
-    {
+    public void step83() throws InterruptedException {
+        Thread.sleep(Duration.ofSeconds(7));
         //Input the first name
         register.firstName.sendKeys("Fabrica");
+        Thread.sleep(Duration.ofSeconds(7));
         //Input the last_name
         register.lastName.sendKeys("Dev");
     }
@@ -719,17 +732,18 @@ public class Registration {
     }
 
     @And("STep[G] User Enter password with seven character and valid confirm password")
-    public void step85()
-    {
+    public void step85() throws InterruptedException {
+        Thread.sleep(Duration.ofSeconds(2));
         //Input the password
         register.pass.sendKeys("Fabri1!");
+        Thread.sleep(Duration.ofSeconds(2));
         //Input the Confirmation password
         register.ConfirmPass.sendKeys("Fabrica123!");
     }
 
     @When("STEp[H] Select User country code")
-    public void step86()
-    {;
+    public void step86() throws InterruptedException {
+        Thread.sleep(Duration.ofSeconds(2));
         register.country.click();
     }
 
@@ -797,10 +811,11 @@ public class Registration {
     }
 
     @And("STEP[E] user write valid first name and valid last name")
-    public void step94()
-    {
+    public void step94() throws InterruptedException {
+        Thread.sleep(Duration.ofSeconds(7));
         //Input the first name
         register.firstName.sendKeys("Fabrica");
+        Thread.sleep(Duration.ofSeconds(7));
         //Input the last_name
         register.lastName.sendKeys("Dev");
     }
@@ -814,10 +829,11 @@ public class Registration {
     }
 
     @And("STep[G] User Enter password without special character and valid confirm password")
-    public void step96()
-    {
+    public void step96() throws InterruptedException {
+        Thread.sleep(Duration.ofSeconds(2));
         //Input the password
         register.pass.sendKeys("Fabrica1234");
+        Thread.sleep(Duration.ofSeconds(2));
         //Input the Confirmation password
         register.ConfirmPass.sendKeys("Fabrica123!");
     }
@@ -890,10 +906,11 @@ public class Registration {
     }
 
     @And("STEP[E] User write valid first name and valid last name")
-    public void step105()
-    {
+    public void step105() throws InterruptedException {
+        Thread.sleep(Duration.ofSeconds(7));
         //Input the first name
         register.firstName.sendKeys("Fabrica");
+        Thread.sleep(Duration.ofSeconds(7));
         //Input the last_name
         register.lastName.sendKeys("Dev");
     }
@@ -907,17 +924,18 @@ public class Registration {
     }
 
     @And("STep[G] User Enter password without Uppercase Letter and valid confirm password")
-    public void step107()
-    {
+    public void step107() throws InterruptedException {
+        Thread.sleep(Duration.ofSeconds(2));
         //Input the password
         register.pass.sendKeys("fabrica123!");
+        Thread.sleep(Duration.ofSeconds(2));
         //Input the Confirmation password
         register.ConfirmPass.sendKeys("Fabrica123!");
     }
 
     @When("STEP[H] Select User Country code")
-    public void step108()
-    {
+    public void step108() throws InterruptedException {
+        Thread.sleep(Duration.ofSeconds(3));
         register.country.click();
     }
 
@@ -983,10 +1001,11 @@ public class Registration {
     }
 
     @And("STEP[E] User Write valid first name and valid last name")
-    public void step116()
-    {
+    public void step116() throws InterruptedException {
+        Thread.sleep(Duration.ofSeconds(7));
         //Input the first name
         register.firstName.sendKeys("Fabrica");
+        Thread.sleep(Duration.ofSeconds(7));
         //Input the last_name
         register.lastName.sendKeys("Dev");
     }
@@ -1000,17 +1019,18 @@ public class Registration {
     }
 
     @And("STep[G] User Enter password without number and valid confirm password")
-    public void step118()
-    {
+    public void step118() throws InterruptedException {
+        Thread.sleep(Duration.ofSeconds(2));
         //Input the password
         register.pass.sendKeys("Fabrica!");
+        Thread.sleep(Duration.ofSeconds(2));
         //Input the Confirmation password
         register.ConfirmPass.sendKeys("Fabrica123!");
     }
 
     @When("STEP[H] Select User Country Code")
-    public void step119()
-    {
+    public void step119() throws InterruptedException {
+        Thread.sleep(Duration.ofSeconds(3));
         register.country.click();
     }
 
@@ -1076,10 +1096,11 @@ public class Registration {
     }
 
     @And("STEP[E] User Write Valid first name and valid last name")
-    public void step127()
-    {
+    public void step127() throws InterruptedException {
+        Thread.sleep(Duration.ofSeconds(7));
         //Input the first name
         register.firstName.sendKeys("Fabrica");
+        Thread.sleep(Duration.ofSeconds(7));
         //Input the last_name
         register.lastName.sendKeys("Dev");
     }
@@ -1093,17 +1114,18 @@ public class Registration {
     }
 
     @And("STep[G] User Enter valid password and valid confirm password")
-    public void step129()
-    {
+    public void step129() throws InterruptedException {
+        Thread.sleep(Duration.ofSeconds(2));
         //Input the password
         register.pass.sendKeys("Fabrica123!");
+        Thread.sleep(Duration.ofSeconds(2));
         //Input the Confirmation password
         register.ConfirmPass.sendKeys("Fabrica123!");
     }
 
     @When("STEP[H] User select invalid county code")
-    public void step130()
-    {
+    public void step130() throws InterruptedException {
+        Thread.sleep(Duration.ofSeconds(3));
         register.country.click();
     }
 
@@ -1169,10 +1191,11 @@ public class Registration {
     }
 
     @And("STEP[E] User Write Valid First name and valid last name")
-    public void step138()
-    {
+    public void step138() throws InterruptedException {
+        Thread.sleep(Duration.ofSeconds(7));
         //Input the first name
         register.firstName.sendKeys("Fabrica");
+        Thread.sleep(Duration.ofSeconds(7));
         //Input the last_name
         register.lastName.sendKeys("Dev");
     }
@@ -1186,17 +1209,18 @@ public class Registration {
     }
 
     @And("STep[G] User Enter valid Password and valid confirm password")
-    public void step140()
-    {
+    public void step140() throws InterruptedException {
+        Thread.sleep(Duration.ofSeconds(2));
         //Input the password
         register.pass.sendKeys("Fabrica123!");
+        Thread.sleep(Duration.ofSeconds(2));
         //Input the Confirmation password
         register.ConfirmPass.sendKeys("Fabrica123!");
     }
 
     @When("STEP[H] User select valid County code")
-    public void step141()
-    {
+    public void step141() throws InterruptedException {
+        Thread.sleep(Duration.ofSeconds(3));
         register.country.click();
     }
 

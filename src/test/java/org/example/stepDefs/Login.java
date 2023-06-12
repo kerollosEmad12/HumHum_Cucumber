@@ -123,7 +123,7 @@ public class Login {
 
     @And("user enter email not registered")
     public void Step13() throws InterruptedException {
-        js.executeScript("arguments[0].value='Ahmed@gmail.com';", login.email);
+        login.email.sendKeys("Ahmed@gmail.com");
         Thread.sleep(Duration.ofSeconds(2));
     }
 

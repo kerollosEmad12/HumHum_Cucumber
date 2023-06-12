@@ -11,7 +11,7 @@ public class P03_LoginPage {
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy (xpath = "//input[@type=\"email\"]")
+    @FindBy (css = "input[type=\"email\"]")
     public WebElement email;
 
     @FindBy (css = "input[type=\"password\"]")

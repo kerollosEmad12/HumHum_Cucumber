@@ -25,16 +25,16 @@ public class P04_OrderPage {
     @FindBy (css = "button[class=\"btn dark event-btn continue-shopping\"]")
     public WebElement shop;
 
-    @FindBy (css = "div>ul[id=\"__BVID__65__BV_tab_controls_\"]>li>a[id=\"__BVID__68___BV_tab_button__\"]")
+    @FindBy (css = "div[class=\"product-silder specialOffers\"] div div div div div ul li:nth-child(2) a")
     public WebElement Gift;
 
-    @FindBy (xpath = "//*[@id=\"__BVID__68\"]//div//a//button[@class=\"bg-main text-white\"]")
+    @FindBy (xpath = "//*[@class=\"tab-pane active\"]//div//a//button[@class=\"bg-main text-white\"]")
     public WebElement cart1;
 
-    @FindBy (css = "div>ul[id=\"__BVID__65__BV_tab_controls_\"]>li>a[id=\"__BVID__72___BV_tab_button__\"]")
+    @FindBy (css = "div[class=\"product-silder specialOffers\"] div div div div div ul li:nth-child(4) a")
     public WebElement basket;
 
-    @FindBy (xpath = "//*[@id=\"__BVID__72\"]//div//a//button[@class=\"bg-main text-white\"]")
+    @FindBy (xpath = "//*[@class=\"tab-pane active\"]//div//a//button[@class=\"bg-main text-white\"]")
     public WebElement cart2;
 
     @FindBy (css = "button a[href=\"/humhum-user/cart\"]")
