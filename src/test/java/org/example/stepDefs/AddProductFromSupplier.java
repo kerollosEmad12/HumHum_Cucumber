@@ -978,4 +978,339 @@ public class AddProductFromSupplier {
 
         soft.assertAll();
     }
+
+    @And("user    enter    category")
+    public void step120() throws InterruptedException {
+        product.category1.click();
+        Thread.sleep(Duration.ofSeconds(4));
+        product.category2.click();
+        Thread.sleep(Duration.ofSeconds(4));
+    }
+
+    @And("user    enter    sub category")
+    public void step121() throws InterruptedException {
+        product.subCategory1.click();
+        Thread.sleep(Duration.ofSeconds(4));
+        product.subCategory2.click();
+        Thread.sleep(Duration.ofSeconds(4));
+    }
+
+    @And("user    enter    last category")
+    public void step122() throws InterruptedException {
+        product.lastCategory1.click();
+        Thread.sleep(Duration.ofSeconds(4));
+        product.lastCategory2.click();
+        Thread.sleep(Duration.ofSeconds(4));
+    }
+
+    @And("user    add    brand name")
+    public void step123() throws InterruptedException {
+        product.brandName1.click();
+        Thread.sleep(Duration.ofSeconds(4));
+        product.brandName2.click();
+        Thread.sleep(Duration.ofSeconds(4));
+    }
+
+    @And("user    enter    name En")
+    public void step124() throws InterruptedException {
+        product.nameEN.sendKeys("Grapes");
+        Thread.sleep(Duration.ofSeconds(4));
+    }
+
+    @And("user    enter    name AR")
+    public void step125() throws InterruptedException {
+        product.nameAR.sendKeys("عنب");
+        Thread.sleep(Duration.ofSeconds(4));
+    }
+
+    @And("user    enter   product  from")
+    public void step126() throws InterruptedException {
+        product.productFrom1.click();
+        Thread.sleep(Duration.ofSeconds(4));
+        product.productFrom2.click();
+        Thread.sleep(Duration.ofSeconds(4));
+    }
+
+    @When("user    choose   selling country")
+    public void step127() throws InterruptedException {
+        product.sellingCount1.click();
+        Thread.sleep(Duration.ofSeconds(4));
+        product.sellingCount2.click();
+        Thread.sleep(Duration.ofSeconds(4));
+        product.sellingCount3.click();
+        Thread.sleep(Duration.ofSeconds(4));
+        product.DynamicInput.sendKeys("Test");
+        Thread.sleep(Duration.ofSeconds(4));
+    }
+
+    @And("user    click on   save button")
+    public void step128() throws InterruptedException {
+        product.save1.click();
+        Thread.sleep(Duration.ofSeconds(4));
+        product.ok1.click();
+        Thread.sleep(Duration.ofSeconds(4));
+    }
+
+    @And("user    enter  main  image")
+    public void step129() throws InterruptedException {
+        js.executeScript("arguments[0].scrollIntoView();", product.image1);
+        product.image1.sendKeys("C:\\Users\\Fabrica Dev\\Pictures\\iTop Screenshot\\5.jpeg");
+        Thread.sleep(Duration.ofSeconds(4));
+    }
+
+    @And("user   enter  product  image")
+    public void step130() throws InterruptedException {
+        js.executeScript("arguments[0].scrollIntoView();", product.image2);
+        product.image2.sendKeys("C:\\Users\\Fabrica Dev\\Pictures\\iTop Screenshot\\5.jpeg");
+        Thread.sleep(Duration.ofSeconds(4));
+    }
+
+    @Then("product   is  created  successfully")
+    public void step131() throws InterruptedException {
+        product.save2.click();
+        Thread.sleep(Duration.ofSeconds(2));
+        product.ok2.click();
+        Thread.sleep(Duration.ofSeconds(2));
+    }
+
+    @And("user  enter  BtoB  price")
+    public void step132() throws InterruptedException {
+        product.priceB2B.sendKeys("12.5");
+        Thread.sleep(Duration.ofSeconds(2));
+    }
+
+    @And("user   enter wight and keep unit is an empty")
+    public void step133() throws InterruptedException {
+        product.weightB2B.sendKeys("52");
+        Thread.sleep(Duration.ofSeconds(2));
+        product.unit1.click();
+    }
+
+    @And("user   enter  stock  quantity")
+    public void step134() throws InterruptedException {
+        product.quantity.sendKeys("1000");
+        Thread.sleep(Duration.ofSeconds(2));
+    }
+
+    @And("user   enter  main  order")
+    public void step135() throws InterruptedException {
+        product.mainOrder.sendKeys("5");
+        Thread.sleep(Duration.ofSeconds(2));
+    }
+
+    @And("user   enter  low  stock")
+    public void step136() throws InterruptedException {
+        product.lowStock.sendKeys("500");
+        Thread.sleep(Duration.ofSeconds(2));
+    }
+
+    @When("user   enter  return  time")
+    public void step137() throws InterruptedException {
+        product.ReturnTime1.click();
+        Thread.sleep(Duration.ofSeconds(2));
+        product.ReturnTime2.click();
+        Thread.sleep(Duration.ofSeconds(2));
+    }
+
+    @When("user   choose  delivery  time")
+    public void step138() throws InterruptedException {
+        product.delivery1.click();
+        Thread.sleep(Duration.ofSeconds(2));
+        product.delivery2.click();
+        Thread.sleep(Duration.ofSeconds(2));
+    }
+
+    @And("user   click on  ask admin to  publish button")
+    public void step139() throws InterruptedException {
+        product.ask.click();
+        Thread.sleep(Duration.ofSeconds(2));
+    }
+
+    @Then("BtoB  is  publish   successfully")
+    public void step140() throws InterruptedException {
+        product.save3.click();
+        Thread.sleep(Duration.ofSeconds(2));
+
+        //1- message content or equal "The unit id field is mandatory."
+        SoftAssert soft = new SoftAssert();
+        String actualMsg = driver.findElement(By.cssSelector("div:nth-child(2) div:nth-child(5) div[class=\"text-danger mt-1 ng-star-inserted\"]:nth-child(2)")).getText();
+        soft.assertTrue(actualMsg.contains("The unit id field is mandatory."),
+                "actualMsg : "+actualMsg +" | "+ "expected Msg : "+"The unit id field is mandatory."
+        );
+
+        //2- message color is red using RGBA or Hex
+        String actualColorRGBA = driver.findElement(By.cssSelector("div:nth-child(2) div:nth-child(5) div[class=\"text-danger mt-1 ng-star-inserted\"]:nth-child(2)")).getCssValue("color");
+        String actualColorHex = Color.fromString(actualColorRGBA).asHex();
+        soft.assertEquals(actualColorHex, "#dc3545");
+
+        soft.assertAll();
+    }
+
+    @And("user     enter    category")
+    public void step141() throws InterruptedException {
+        product.category1.click();
+        Thread.sleep(Duration.ofSeconds(4));
+        product.category2.click();
+        Thread.sleep(Duration.ofSeconds(4));
+    }
+
+    @And("user     enter    sub category")
+    public void step142() throws InterruptedException {
+        product.subCategory1.click();
+        Thread.sleep(Duration.ofSeconds(4));
+        product.subCategory2.click();
+        Thread.sleep(Duration.ofSeconds(4));
+    }
+
+    @And("user     enter    last category")
+    public void step143() throws InterruptedException {
+        product.lastCategory1.click();
+        Thread.sleep(Duration.ofSeconds(4));
+        product.lastCategory2.click();
+        Thread.sleep(Duration.ofSeconds(4));
+    }
+
+    @And("user     add    brand name")
+    public void step144() throws InterruptedException {
+        product.brandName1.click();
+        Thread.sleep(Duration.ofSeconds(4));
+        product.brandName2.click();
+        Thread.sleep(Duration.ofSeconds(4));
+    }
+
+    @And("user     enter    name En")
+    public void step145() throws InterruptedException {
+        product.nameEN.sendKeys("Grapes");
+        Thread.sleep(Duration.ofSeconds(4));
+    }
+
+    @And("user     enter    name AR")
+    public void step146() throws InterruptedException {
+        product.nameAR.sendKeys("عنب");
+        Thread.sleep(Duration.ofSeconds(4));
+    }
+
+    @And("user     enter   product  from")
+    public void step147() throws InterruptedException {
+        product.productFrom1.click();
+        Thread.sleep(Duration.ofSeconds(4));
+        product.productFrom2.click();
+        Thread.sleep(Duration.ofSeconds(4));
+    }
+
+    @When("user    choose   selling  country")
+    public void step148() throws InterruptedException {
+        product.sellingCount1.click();
+        Thread.sleep(Duration.ofSeconds(4));
+        product.sellingCount2.click();
+        Thread.sleep(Duration.ofSeconds(4));
+        product.sellingCount3.click();
+        Thread.sleep(Duration.ofSeconds(4));
+        product.DynamicInput.sendKeys("Test");
+        Thread.sleep(Duration.ofSeconds(4));
+    }
+
+    @And("user    click  on   save button")
+    public void step149() throws InterruptedException {
+        product.save1.click();
+        Thread.sleep(Duration.ofSeconds(4));
+        product.ok1.click();
+        Thread.sleep(Duration.ofSeconds(4));
+    }
+
+    @And("user    enter  main   image")
+    public void step150() throws InterruptedException {
+        js.executeScript("arguments[0].scrollIntoView();", product.image1);
+        product.image1.sendKeys("C:\\Users\\Infotech\\Downloads\\5.jfif");
+        Thread.sleep(Duration.ofSeconds(4));
+    }
+
+    @And("user   enter   product  image")
+    public void step151() throws InterruptedException {
+        js.executeScript("arguments[0].scrollIntoView();", product.image2);
+        product.image2.sendKeys("C:\\Users\\Infotech\\Downloads\\5.jfif");
+        Thread.sleep(Duration.ofSeconds(4));
+    }
+
+    @Then("product   is   created  successfully")
+    public void step152() throws InterruptedException {
+        product.save2.click();
+        Thread.sleep(Duration.ofSeconds(2));
+        product.ok2.click();
+        Thread.sleep(Duration.ofSeconds(2));
+    }
+
+    @And("user  enter  BtoB   price")
+    public void step153() throws InterruptedException {
+        product.priceB2B.sendKeys("12.5");
+        Thread.sleep(Duration.ofSeconds(2));
+    }
+
+    @And("user   enter wight and enter the unit")
+    public void step154() throws InterruptedException {
+        product.weightB2B.sendKeys("52");
+        Thread.sleep(Duration.ofSeconds(2));
+        product.unit1.click();
+        Thread.sleep(Duration.ofSeconds(2));
+        product.unit2.click();
+        Thread.sleep(Duration.ofSeconds(2));
+    }
+
+    @And("user   enter  stock   quantity")
+    public void step155() throws InterruptedException {
+        product.quantity.sendKeys("1000");
+        Thread.sleep(Duration.ofSeconds(2));
+    }
+
+    @And("user   enter  main   order")
+    public void step156() throws InterruptedException {
+        product.mainOrder.sendKeys("5");
+        Thread.sleep(Duration.ofSeconds(2));
+    }
+
+    @And("user   enter  low   stock")
+    public void step157() throws InterruptedException {
+        product.lowStock.sendKeys("500");
+        Thread.sleep(Duration.ofSeconds(2));
+    }
+
+    @When("user   enter   return  time")
+    public void step158() throws InterruptedException {
+        product.ReturnTime1.click();
+        Thread.sleep(Duration.ofSeconds(2));
+        product.ReturnTime2.click();
+        Thread.sleep(Duration.ofSeconds(2));
+    }
+
+    @When("keep delivery time is an empty")
+    public void step159() throws InterruptedException {
+        product.delivery1.click();
+        Thread.sleep(Duration.ofSeconds(2));
+    }
+
+    @And("user   click on  ask  admin to  publish button")
+    public void step160() throws InterruptedException {
+        product.ask.click();
+        Thread.sleep(Duration.ofSeconds(2));
+    }
+
+    @Then("BtoB  is   publish   successfully")
+    public void step161() throws InterruptedException {
+        product.save3.click();
+        Thread.sleep(Duration.ofSeconds(2));
+
+        //1- message content or equal "The delivery time id field is mandatory."
+        SoftAssert soft = new SoftAssert();
+        String actualMsg = driver.findElement(By.cssSelector("div div:nth-child(2) div div:nth-child(12) div:nth-child(2)")).getText();
+        soft.assertTrue(actualMsg.contains("The delivery time id field is mandatory."),
+                "actualMsg : "+actualMsg +" | "+ "expected Msg : "+"The delivery time id field is mandatory."
+        );
+
+        //2- message color is red using RGBA or Hex
+        String actualColorRGBA = driver.findElement(By.cssSelector("div div:nth-child(2) div div:nth-child(12) div:nth-child(2)")).getCssValue("color");
+        String actualColorHex = Color.fromString(actualColorRGBA).asHex();
+        soft.assertEquals(actualColorHex, "#dc3545");
+
+        soft.assertAll();
+    }
 }

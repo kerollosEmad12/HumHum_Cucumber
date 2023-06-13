@@ -132,3 +132,49 @@ Feature: Add product from supplier
     When user  choose  delivery  time
     And user  click on  ask admin to  publish button
     Then BtoB  is  publish  successfully
+
+  Scenario: user could create new product with invalid data (Keep unit is an empty)
+    And user    enter    category
+    And user    enter    sub category
+    And user    enter    last category
+    And user    add    brand name
+    And user    enter    name En
+    And user    enter    name AR
+    And user    enter   product  from
+    When user    choose   selling country
+    And user    click on   save button
+    And user    enter  main  image
+    And user   enter  product  image
+    Then product   is  created  successfully
+    And user  enter  BtoB  price
+    And user   enter wight and keep unit is an empty
+    And user   enter  stock  quantity
+    And user   enter  main  order
+    And user   enter  low  stock
+    When user   enter  return  time
+    When user   choose  delivery  time
+    And user   click on  ask admin to  publish button
+    Then BtoB  is  publish   successfully
+
+  Scenario: user could create new product with invalid data (keep delivery time is an empty)
+    And user     enter    category
+    And user     enter    sub category
+    And user     enter    last category
+    And user     add    brand name
+    And user     enter    name En
+    And user     enter    name AR
+    And user     enter   product  from
+    When user    choose   selling  country
+    And user    click  on   save button
+    And user    enter  main   image
+    And user   enter   product  image
+    Then product   is   created  successfully
+    And user  enter  BtoB   price
+    And user   enter wight and enter the unit
+    And user   enter  stock   quantity
+    And user   enter  main   order
+    And user   enter  low   stock
+    When user   enter   return  time
+    When keep delivery time is an empty
+    And user   click on  ask  admin to  publish button
+    Then BtoB  is   publish   successfully
