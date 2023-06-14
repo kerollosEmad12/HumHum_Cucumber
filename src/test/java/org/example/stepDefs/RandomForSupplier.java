@@ -58,7 +58,7 @@ public class RandomForSupplier {
         int randomIndex = rand.nextInt(mainLinks.size());
         Actions action = new Actions(driver);
         System.out.println(mainLinks.get(3).getText());
-        int count = mainLinks.size();     //3
+        int count = mainLinks.size();
         System.out.println(count);
 
         int min = 0;
