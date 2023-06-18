@@ -430,4 +430,65 @@ public class AddGiftFromSupplier {
         String actualColorHex = Color.fromString(actualColorRGBA).asHex();
         soft.assertEquals(actualColorHex, "#dc3545");
     }
+
+    @When("user   choose   product   type")
+    public void step43() throws InterruptedException {
+        gift.productType1.click();
+        Thread.sleep(Duration.ofSeconds(2));
+
+        gift.productType2.click();
+        Thread.sleep(Duration.ofSeconds(2));
+    }
+
+    @And("user  enter  Buy   product")
+    public void step44() throws InterruptedException {
+        gift.buyProduct1.sendKeys("apple");
+        Thread.sleep(Duration.ofSeconds(2));
+
+        gift.buyProduct2.click();
+        Thread.sleep(Duration.ofSeconds(2));
+    }
+
+    @And("user  enter  gift  product")
+    public void step45() throws InterruptedException {
+        gift.giftProduct1.sendKeys("test");
+        Thread.sleep(Duration.ofSeconds(2));
+
+        gift.giftProduct2.click();
+        Thread.sleep(Duration.ofSeconds(2));
+    }
+
+    @And("user  enter  buy  number")
+    public void step46() throws InterruptedException {
+        gift.buyNumber.sendKeys("3");
+        Thread.sleep(Duration.ofSeconds(2));
+    }
+
+    @And("user  enter  gift   number")
+    public void step47() throws InterruptedException {
+        gift.giftNumber.sendKeys("1");
+        Thread.sleep(Duration.ofSeconds(2));
+    }
+
+    @And("user  enter  promotion  period start date  and end date")
+    public void step48() throws InterruptedException {
+        js.executeScript("arguments[0].click();", gift.Btn);
+        Thread.sleep(Duration.ofSeconds(2));
+
+        action.moveToElement(gift.startDate).perform();
+        action.click(gift.startDate).perform();
+        Thread.sleep(Duration.ofSeconds(2));
+
+        action.moveToElement(gift.endDate).perform();
+        action.click(gift.endDate).perform();
+        Thread.sleep(Duration.ofSeconds(2));
+    }
+
+    @Then("The  Buy  X  Gift  Y  is created  successfully")
+    public void step49() throws InterruptedException {
+        gift.done.click();
+        Thread.sleep(Duration.ofSeconds(2));
+        js.executeScript("arguments[0].click();", gift.Ok);
+        Thread.sleep(Duration.ofSeconds(2));
+    }
 }

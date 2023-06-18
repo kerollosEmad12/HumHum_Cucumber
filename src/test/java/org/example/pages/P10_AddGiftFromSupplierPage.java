@@ -60,7 +60,7 @@ public class P10_AddGiftFromSupplierPage {
     @FindBy (css = "div[class=\"input-group\"]:nth-child(3) button")
     public WebElement Btn;
 
-    @FindBy (css = "ngb-datepicker-month div[class=\"ngb-dp-week ng-star-inserted\"]:nth-child(4) div:nth-child(6)")
+    @FindBy (css = "ngb-datepicker-month div[class=\"ngb-dp-week ng-star-inserted\"]:nth-child(4) div:nth-child(7)")
     public WebElement startDate;
 
     @FindBy (css = "ngb-datepicker-month div[class=\"ngb-dp-week ng-star-inserted\"]:nth-child(6) div:nth-child(5)")

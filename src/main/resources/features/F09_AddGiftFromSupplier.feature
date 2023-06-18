@@ -53,3 +53,12 @@ Feature: Add Buy X Gift Y promotion
     And user  enter  gift  number
     And user enters a date prior to the current date
     Then The  Buy  X  Gift  Y  is created successfully
+
+  Scenario: user could create new gift with valid data
+    When user   choose   product   type
+    And user  enter  Buy   product
+    And user  enter  gift  product
+    And user  enter  buy  number
+    And user  enter  gift   number
+    And user  enter  promotion  period start date  and end date
+    Then The  Buy  X  Gift  Y  is created  successfully
