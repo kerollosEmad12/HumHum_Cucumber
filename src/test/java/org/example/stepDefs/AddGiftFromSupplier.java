@@ -82,9 +82,6 @@ public class AddGiftFromSupplier {
     public void step9() throws InterruptedException {
         gift.buyProduct1.sendKeys("");
         Thread.sleep(Duration.ofSeconds(2));
-
-        gift.buyProduct2.click();
-        Thread.sleep(Duration.ofSeconds(2));
     }
 
     @And("user enter the gift product")

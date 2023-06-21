@@ -1,3 +1,4 @@
+@supplier
 Feature: Add Buy X Gift Y promotion
 
   Background:

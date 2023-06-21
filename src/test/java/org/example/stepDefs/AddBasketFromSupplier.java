@@ -150,14 +150,14 @@ public class AddBasketFromSupplier {
     @And("user  enter search product")
     public void step18() throws InterruptedException {
         basket.searchProduct1.sendKeys("Honey");
-        Thread.sleep(Duration.ofSeconds(2));
+        Thread.sleep(Duration.ofSeconds(4));
         basket.searchProduct2.click();
-        Thread.sleep(Duration.ofSeconds(2));
+        Thread.sleep(Duration.ofSeconds(4));
 
         basket.searchProduct1.sendKeys("apple");
-        Thread.sleep(Duration.ofSeconds(2));
+        Thread.sleep(Duration.ofSeconds(4));
         basket.searchProduct3.click();
-        Thread.sleep(Duration.ofSeconds(2));
+        Thread.sleep(Duration.ofSeconds(4));
     }
 
     @And("user  choose Promotion Period")

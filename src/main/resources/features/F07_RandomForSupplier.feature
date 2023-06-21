@@ -1,3 +1,4 @@
+@supplier
 Feature: mouse hover for supplier
 
   Scenario: user could mouse hover for supplier at any choose

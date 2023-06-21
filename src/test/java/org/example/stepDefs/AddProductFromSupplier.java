@@ -1221,14 +1221,14 @@ public class AddProductFromSupplier {
     @And("user    enter  main   image")
     public void step150() throws InterruptedException {
         js.executeScript("arguments[0].scrollIntoView();", product.image1);
-        product.image1.sendKeys("C:\\Users\\Infotech\\Downloads\\5.jfif");
+        product.image1.sendKeys("C:\\Users\\Fabrica Dev\\Pictures\\iTop Screenshot\\5.jpeg");
         Thread.sleep(Duration.ofSeconds(4));
     }
 
     @And("user   enter   product  image")
     public void step151() throws InterruptedException {
         js.executeScript("arguments[0].scrollIntoView();", product.image2);
-        product.image2.sendKeys("C:\\Users\\Infotech\\Downloads\\5.jfif");
+        product.image2.sendKeys("C:\\Users\\Fabrica Dev\\Pictures\\iTop Screenshot\\5.jpeg");
         Thread.sleep(Duration.ofSeconds(4));
     }
 

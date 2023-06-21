@@ -1,3 +1,4 @@
+@supplier
 Feature: Add Basket From supplier
 
   Background:
