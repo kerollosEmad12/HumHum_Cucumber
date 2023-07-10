@@ -1,37 +1,28 @@
 @regression
   Feature: Test Login functionality
 
-    Scenario: user could create new account with invalid data (Email is an empty) for Login (Negative scenario)
+    Scenario Outline: user could login with invalid email data
       Given User Navigate to home page
       And User click on login icon
-      And Keep email is an empty
-      And user enter valid password
-      Then Login is successfully
+      And user enter invalid "<Email>" and valid "<Password>"
+      Then The login "<result>" is displayed
+      Examples:
+        |    Email           | Password | result |
+        |                    | Asd12312 | failure|
+        | kerolos-gmail.com  | Asd12312 | error  |
+        | kerolos @gmail.com | Asd12312 | error  |
+        | Kerolos@gmail.com  | Asd12312 | error  |
+        | kerolos\@gmail.com | Asd12312 | error  |
 
-    Scenario:  user could create new account with invalid data (Email invalid format) for Login (Negative scenario)
-      Given User Navigate To home page
-      And User Click on login icon
-      And user enter email invalid format
-      And User enter valid password
-      Then login is successfully
-
-    Scenario:  user could create new account with invalid data (Email not registered) for Login (Negative scenario)
-      Given User Navigate To Home page
-      And User Click On login icon
-      And user enter email not registered
-      And User Enter valid password
-      Then login Is successfully
-
-    Scenario:  user could create new account with invalid data (pass is an empty) for Login (Negative scenario)
-      Given User Navigate To Home Page
-      And User Click On Login icon
-      And User Enter Valid email
-      And Keep password is an empty
-      Then Login Is successfully
-
-    Scenario:  user could create new account with invalid data (pass is not matched with email) for Login (Negative scenario)
-      Given User  Navigate To Home Page
-      And User  Click On Login icon
-      And User  Enter Valid email
-      And user enter invalid password
-      Then Login  Is successfully
+    Scenario Outline: user could login with invalid password data
+    Given User  Navigate to home page
+    And User  click on login icon
+    And user  enter valid "<Email>" and invalid "<Password>"
+    Then The login "<result>" is displayed
+    Examples:
+      |    Email         | Password | result  |
+      |kerolos@gmail.com |          | failure |
+      |kerolos@gmail.com | 126381   | error   |
+      |kerolos@gmail.com | Asd123 12| error   |
+      |kerolos@gmail.com | Asd12312!| error   |
+      |kerolos@gmail.com | Asd12312 | success |
