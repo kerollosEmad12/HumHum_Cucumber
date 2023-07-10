@@ -7,9 +7,6 @@ import org.example.pages.P01_HomePage;
 import org.example.pages.P03_LoginPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.Color;
-import org.testng.asserts.SoftAssert;
 import static org.junit.Assert.*;
 
 import java.time.Duration;
