@@ -14,9 +14,6 @@ public class P02_RegisterPage {
     @FindBy (css = "a[href=\"/humhum-user/user-register\"]")
     public WebElement create;
 
-    @FindBy (css = "select>option[value=\"Mr\"]")
-    public WebElement title;
-
     @FindBy (css = "input[type=\"text\"]")
     public WebElement firstName;
 
@@ -32,13 +29,10 @@ public class P02_RegisterPage {
     @FindBy (css = "input[id=\"confirmPassword\"]")
     public WebElement ConfirmPass;
 
-    @FindBy (css = "select>option[value=\"EG\"]")
-    public WebElement country;
-
     @FindBy (css = "input[id=\"phone\"]")
     public WebElement phone;
 
-    @FindBy (css = "div>input[type=\"checkbox\"]+label")
+    @FindBy (css = "div[class=\"py-3 custom-control custom-checkbox\"]>input[type=\"checkbox\"]+label ")
     public WebElement box;
 
     @FindBy (css = "div>button[type=\"submit\"]")

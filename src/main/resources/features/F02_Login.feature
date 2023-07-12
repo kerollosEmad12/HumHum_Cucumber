@@ -18,7 +18,7 @@
     Given User  Navigate to home page
     And User  click on login icon
     And user  enter valid "<Email>" and invalid "<Password>"
-    Then The login "<result>" is displayed
+    Then The login "<result>" is passed
     Examples:
       |    Email         | Password | result  |
       |kerolos@gmail.com |          | failure |

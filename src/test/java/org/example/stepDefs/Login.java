@@ -82,7 +82,7 @@ public class Login {
         Thread.sleep(Duration.ofSeconds(3));
     }
 
-    @Then("The login \"([^\"]*)\" is displayed$")
+    @Then("The login \"([^\"]*)\" is passed$")
     public void Step8(String result) {
         js.executeScript("arguments[0].click();", login.Btn);
 
