@@ -105,10 +105,13 @@ public class Registration {
         select.selectByValue(EG);
     }
 
-    @And("User enter valid number {string}")
-    public void step9(String phone_number)
-    {
-        register.phone.sendKeys(phone_number);
+    @And("User enter valid number")
+    public void step9() throws InterruptedException {
+        Faker faker = new Faker();
+        String phoneNumber = faker.numerify("010########");
+        register.phone.sendKeys(phoneNumber);
+        Thread.sleep(Duration.ofSeconds(1));
+        register.phone.sendKeys(phoneNumber);
     }
 
     @And("Mark on Subscribe to the Newsletter checkbox")
@@ -176,9 +179,13 @@ public class Registration {
         select.selectByValue(EG);
     }
 
-    @And("Register should be possible if user enter valid number {string}")
-    public void step15(String phone_number) {
-        register.phone.sendKeys(phone_number);
+    @And("Register should be possible if user enter valid number")
+    public void step15() throws InterruptedException {
+        Faker faker = new Faker();
+        String phoneNumber = faker.numerify("010########");
+        register.phone.sendKeys(phoneNumber);
+        Thread.sleep(Duration.ofSeconds(1));
+        register.phone.sendKeys(phoneNumber);
     }
 
     @And("Register should be possible if user Mark on Subscribe to the Newsletter checkbox")
@@ -247,9 +254,13 @@ public class Registration {
         select.selectByValue(EG);
     }
 
-    @And("user could enter valid number {string}")
-    public void step22(String phone_number) {
-        register.phone.sendKeys(phone_number);
+    @And("user could enter valid number")
+    public void step22() throws InterruptedException {
+        Faker faker = new Faker();
+        String phoneNumber = faker.numerify("010########");
+        register.phone.sendKeys(phoneNumber);
+        Thread.sleep(Duration.ofSeconds(1));
+        register.phone.sendKeys(phoneNumber);
     }
 
     @And("user could Mark on Subscribe to the Newsletter checkbox")
@@ -341,7 +352,7 @@ public class Registration {
                 "actualMsg : "+actualMsg +" | "+ "expected Msg : "+"the mobile number is mandatory."
         );
 
-        if ("failure".equals(result)){
+        if ("success".equals(result)){
             assertTrue(driver.findElement(By.cssSelector("div[class=\"col-lg-9 col-8\"] fieldset div[class=\"error\"]")).isDisplayed());
         }
 

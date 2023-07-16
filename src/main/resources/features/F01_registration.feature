@@ -12,7 +12,7 @@ Feature: Test registration automation functionality
       And User enter valid email
       And User enter valid "Fabrica123!" and "Fabrica123!"
       When Select user country code "EG"
-      And User enter valid number "01274068949"
+      And User enter valid number
       And Mark on Subscribe to the Newsletter checkbox
       Then New account is created successfully "<result>"
      Examples:
@@ -29,7 +29,7 @@ Feature: Test registration automation functionality
     And User should enter invalid email "<email>"
     And Register should be possible if user enter valid password "Fabrica123!" and valid confirm password "Fabrica123!"
     When Register should be possible if user Select valid country code "EG"
-    And Register should be possible if user enter valid number "01274068949"
+    And Register should be possible if user enter valid number
     And Register should be possible if user Mark on Subscribe to the Newsletter checkbox
     Then Register should be possible if user created new account successfully "<result>"
     Examples:
@@ -49,7 +49,7 @@ Feature: Test registration automation functionality
     And User could enter valid email
     And user could enter invalid password "<password>" and valid confirm password "<confirm_password>"
     When user could Select valid country code "EG"
-    And user could enter valid number "01274068949"
+    And user could enter valid number
     And user could Mark on Subscribe to the Newsletter checkbox
     Then user could created new account successfully "<result>"
     Examples:
@@ -83,4 +83,4 @@ Feature: Test registration automation functionality
       | 656587566882 | failure|
       | 0103358asd97 | failure|
       | 0103358477 5 | failure|
-      | 01033584775  | success|
+      | 01033584774  | success|
