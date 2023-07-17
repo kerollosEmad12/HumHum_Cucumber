@@ -21,7 +21,7 @@ import static org.junit.Assert.*;
 import java.time.Duration;
 
 import static org.example.stepDefs.Hooks.driver;
-public class Registration {
+public class C02_Registration {
     public static String globalEmail;
     P01_HomePage home = new P01_HomePage();
     P02_RegisterPage register = new P02_RegisterPage();

@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 import static org.example.stepDefs.Hooks.driver;
-public class Order {
+public class C04_Order {
     P01_HomePage home = new P01_HomePage();
     P04_OrderPage order = new P04_OrderPage();
     JavascriptExecutor js = (JavascriptExecutor) driver;

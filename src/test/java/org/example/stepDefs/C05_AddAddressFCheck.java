@@ -17,7 +17,7 @@ import org.testng.asserts.SoftAssert;
 import java.time.Duration;
 
 import static org.example.stepDefs.Hooks.driver;
-public class AddAddressFCheck {
+public class C05_AddAddressFCheck {
 
     JavascriptExecutor js = (JavascriptExecutor) driver;
     P01_HomePage home = new P01_HomePage();

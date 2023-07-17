@@ -13,7 +13,7 @@ import java.time.Duration;
 
 import static org.example.stepDefs.Hooks.driver;
 
-public class Login {
+public class C03_Login {
 
     JavascriptExecutor js = (JavascriptExecutor) driver;
     P01_HomePage home = new P01_HomePage();

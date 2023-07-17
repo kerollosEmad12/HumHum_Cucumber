@@ -15,7 +15,7 @@ import static org.junit.Assert.*;
 import java.time.Duration;
 
 import static org.example.stepDefs.Hooks.driver;
-public class AddBuyer {
+public class C13_AddBuyer {
 
     public static String globalEmail;
     P13_AddBuyerPage buyer = new P13_AddBuyerPage();

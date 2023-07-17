@@ -15,7 +15,7 @@ import java.time.Duration;
 
 import static org.example.stepDefs.Hooks.driver;
 
-public class AddBuyXGetYSupplier {
+public class C09_AddBuyXGetYSupplier {
     P09_AddBuyXGetYPage BuyX = new P09_AddBuyXGetYPage();
     JavascriptExecutor js = (JavascriptExecutor) driver;
 

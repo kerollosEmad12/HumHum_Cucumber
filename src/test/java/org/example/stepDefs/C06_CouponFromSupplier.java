@@ -15,7 +15,7 @@ import java.time.Duration;
 
 import static org.example.stepDefs.Hooks.driver;
 
-public class CouponFromSupplier {
+public class C06_CouponFromSupplier {
 
     JavascriptExecutor js = (JavascriptExecutor) driver;
     P06_CouponFromSupplierPage coupon = new P06_CouponFromSupplierPage();

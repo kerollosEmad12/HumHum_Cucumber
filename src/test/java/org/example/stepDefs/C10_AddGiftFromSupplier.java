@@ -15,7 +15,7 @@ import java.time.Duration;
 
 import static org.example.stepDefs.Hooks.driver;
 
-public class AddGiftFromSupplier {
+public class C10_AddGiftFromSupplier {
 
     P10_AddGiftFromSupplierPage gift = new P10_AddGiftFromSupplierPage();
 

@@ -12,7 +12,7 @@ import java.time.Duration;
 
 import static org.example.stepDefs.Hooks.driver;
 
-public class AddBasketFromSupplier {
+public class C11_AddBasketFromSupplier {
     P11_AddBasketFromSupplierPage basket = new P11_AddBasketFromSupplierPage();
 
     JavascriptExecutor js = (JavascriptExecutor) driver;

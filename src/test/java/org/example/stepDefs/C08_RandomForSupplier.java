@@ -15,7 +15,7 @@ import java.util.Random;
 
 import static org.example.stepDefs.Hooks.driver;
 
-public class RandomForSupplier {
+public class C08_RandomForSupplier {
 
     P08_RandomForSupplierPage rand = new P08_RandomForSupplierPage();
 

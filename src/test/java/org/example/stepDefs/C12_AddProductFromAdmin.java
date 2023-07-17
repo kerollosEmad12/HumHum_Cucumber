@@ -10,7 +10,7 @@ import java.time.Duration;
 
 import static org.example.stepDefs.Hooks.driver;
 
-public class AddProductFromAdmin {
+public class C12_AddProductFromAdmin {
     P12_AddProductFromAdminPage proAdmin = new P12_AddProductFromAdminPage();
     JavascriptExecutor js = (JavascriptExecutor) driver;
 

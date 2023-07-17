@@ -15,7 +15,7 @@ import java.time.Duration;
 
 import static org.example.stepDefs.Hooks.driver;
 
-public class AddProductFromSupplier {
+public class C07_AddProductFromSupplier {
     JavascriptExecutor js = (JavascriptExecutor) driver;
     P07_AddProductFSupplierPage product = new P07_AddProductFSupplierPage();
     @Given("user  enter to supplier page")
