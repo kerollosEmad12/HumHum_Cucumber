@@ -57,3 +57,28 @@ Feature: Test admin automation functionality
       | 656587566882 | failure|
       | 0103358asd97 | failure|
       | 0103358477 5 | failure|
+
+
+  Scenario Outline: user could create a new buyer from admin (password and confirm password)
+    And add buyer should be possible if user input the first name "eslam" and last name "kandil"
+    And add buyer should be possible if user input valid email
+    And add buyer should be possible if user input EN company name "fabrica" and AR company name "فابريكا"
+    And add buyer should be possible if user input the job title "sales"
+    And add buyer should be possible if user input the mobile number
+    And add buyer should be possible if user could password "<password>" and confirm password "<confirm_password>"
+    Then add buyer should be possible if user The created new buyer is successfully "<result>"
+    Examples:
+      |   password  | confirm_password | result |
+      | f           | Fabrica123!      | failure|
+      | fa123       | Fabrica123!      | failure|
+      | Fabrica     | Fabrica123!      | failure|
+      | fabrica123! | Fabrica123!      | failure|
+      | FABRICA123! | Fabrica123!      | failure|
+      | Fabrica123  | Fabrica123!      | failure|
+      | 12345678    | Fabrica123!      | failure|
+      | @#%*&^!@    | Fabrica123!      | failure|
+      | Fabrica 123!| Fabrica123!      | failure|
+      | Fabrica123! | Fabrica124!      | failure|
+      | Fabrica123! | fabrica123!      | failure|
+      | Fabrica123! | Fabrica 123!     | failure|
+      | Fabrica123! | kerolos123!      | failure|

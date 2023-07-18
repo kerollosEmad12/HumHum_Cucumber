@@ -263,4 +263,75 @@ public class C13_AddBuyer {
 
         soft.assertAll();
     }
+
+    @And("add buyer should be possible if user input the first name {string} and last name {string}")
+    public void step29(String first_name, String last_name) throws InterruptedException {
+        buyer.first.sendKeys(first_name);
+        Thread.sleep(Duration.ofSeconds(3));
+
+        buyer.last.sendKeys(last_name);
+        Thread.sleep(Duration.ofSeconds(3));
+    }
+
+    @And("add buyer should be possible if user input valid email")
+    public void step30() throws InterruptedException {
+        Faker faker = new Faker();
+        globalEmail = faker.internet().emailAddress();
+        buyer.E.sendKeys(globalEmail);
+        Thread.sleep(Duration.ofSeconds(3));
+    }
+
+    @And("add buyer should be possible if user input EN company name {string} and AR company name {string}")
+    public void step31(String EN, String AR) throws InterruptedException {
+        buyer.name_En.sendKeys(EN);
+        Thread.sleep(Duration.ofSeconds(3));
+
+        buyer.name_AR.sendKeys(AR);
+        Thread.sleep(Duration.ofSeconds(3));
+    }
+
+    @And("add buyer should be possible if user input the job title {string}")
+    public void step32(String title) throws InterruptedException {
+        buyer.job.sendKeys(title);
+        Thread.sleep(Duration.ofSeconds(3));
+    }
+
+    @And("add buyer should be possible if user input the mobile number")
+    public void step33() throws InterruptedException {
+        Faker faker = new Faker();
+        String phoneNumber = faker.numerify("010########");
+        buyer.num.sendKeys(phoneNumber);
+        Thread.sleep(Duration.ofSeconds(3));
+    }
+
+    @And("add buyer should be possible if user could password {string} and confirm password {string}")
+    public void step34(String password, String confirm_password) throws InterruptedException {
+        buyer.Password.sendKeys(password);
+        Thread.sleep(Duration.ofSeconds(3));
+
+        buyer.conPass.sendKeys(confirm_password);
+        Thread.sleep(Duration.ofSeconds(3));
+    }
+
+    @Then("add buyer should be possible if user The created new buyer is successfully {string}")
+    public void step35(String result) {
+        buyer.save.click();
+
+        //1- message content or equal "Please enter an Email"
+        SoftAssert soft = new SoftAssert();
+        String actualMsg = driver.findElement(By.id("swal2-title")).getText();
+        soft.assertTrue(actualMsg.contains("Validation Error"),
+                "actualMsg : "+actualMsg +" | "+ "expected Msg : "+"Validation Error"
+        );
+
+        if ("failure".equals(result)){
+            assertTrue(driver.findElement(By.id("swal2-title")).isDisplayed());
+        }
+
+        else {
+            assertTrue(driver.findElement(By.cssSelector("div>button[type=\"submit\"]")).isDisplayed());
+        }
+
+        soft.assertAll();
+    }
 }
